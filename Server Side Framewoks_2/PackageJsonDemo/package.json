@@ -1,0 +1,15 @@
+{
+  "name": "packagejsondemo",
+  "version": "1.0.0",
+  "description": "package.json demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mourice-oduor",
+  "license": "ISC",
+  "dependencies": {
+    "cat-me": "^1.0.3",
+    "express": "^4.17.1"
+  }
+}
