@@ -1,0 +1,44 @@
+node
+locate the folder
+run the node server by node f_name(.js) i.e: node app.js
+ steps;
+1.echo.js
+2.grader.js
+3.Demo-App
+4.Myshop
+
+5.SERVER side FrameWORKS: express/npm/routes
+  Express-js - Express.js, or simply Express, is a back end web application framework for Node.js, released as free and
+   open-source software under the MIT License. It is designed for building web applications and APIs.
+    It has been called the de facto standard server framework for Node.js.
+     Link to Documentation:  https://expressjs.com/
+      Basics => First Express App
+      
+6.The package.json/package.json Demo
+  npm init to create a package.json file
+  inside the file> npm install express/any other package --save .. this will be stored under dependencies
+  
+7.Route Params/ Routing order
+
+8.Express App Exercise => Testing Routing Basics together with loops.
+
+9. Intermediate Express:Templates(.ejs_files)> EJSDemo/npm init/touch app.js/npm install express --save
+   EJS(Embedded JavaScript)<%= %> /render
+10.EJS Conditionals and loops > difference betwwen <%=  %> & <%  %>
+11. Serving Custom Assetss> adding css styles > using view engine on all .ejs files
+    partials>contains html headers and footers
+12.Post Requests, (Run npm install -g npm)
+    post route is for sending or adding new data to the database to be used later.
+    adding a form to the route
+    npm install body-parser --save go online read body-parser docs
+    res.redirect(takes the name of the route and redirects you to that route)
+13. YelpCampBasics Initial Routes: Add a Landing page, mkdir views/touch landing.ejs... add campground page 
+    that lists all campgrounds with name & image
+    a)Yelpcamp Layout: add layout and basic stylling, create header & footer partials, add in Bootstrap cdn
+    b) creating New Campgrounds: setup new campground POST route, Add in body-parser, setup route to show form, Add basic 
+    unstylled form.
+    c)Styling Campgrounds: add a better header/title, make campgrounds display in a grid
+    d)Style the navbar and form: add a navbar to all templates, style the new campground forms
+
+
+
