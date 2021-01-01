@@ -22,11 +22,27 @@ run the node server by node f_name(.js) i.e: node app.js
 
 8.Express App Exercise => Testing Routing Basics together with loops.
 
-9. Intermediate Express:Templates(.ejs_files)> EJSDemo/npm init/touch app.js/npm install express --save
+9. Intermediate Expressjs => :Templates(.ejs_files)> mkdir EJSDemo/npm init/touch app.js/npm install express --save
    EJS(Embedded JavaScript)<%= %> /render
-10.EJS Conditionals and loops > difference betwwen <%=  %> & <%  %>
+      Link to Documentation: https://ejs.co/
+      Under same/main directory, install ejs by: npm install ejs  "to be saved under package.json file"
+   Under same EJSDemo-directory, we make a separate directory called views to hold the html templates(.ejs_files).
+   NOTE: INCLUDE => app.set("view engine", "ejs"); __under app.js   // this is in order for the views-template files to be rendered.
+   
+10.EJS Conditionals and loops > difference betwwen <%=  %> & <%  %> is that:
+       When using the tags in html, we use the one with equal sign; <%=  %>, while;
+       when using the loops/conditional statements, we use <% %>.
+       
 11. Serving Custom Assetss> adding css styles > using view engine on all .ejs files
-    partials>contains html headers and footers
+          Under same EJSDemo-directory, we make a separate directory called public to hold the css-templates(.css_files).
+    NOTE: INCLUDE => app.use(express.static("public")); __under app.js   // this is in order for the css files to be rendered.
+    
+          PARTIALS:
+    INSIDE Views directory, make another dir called partials, which contains html headers and footers.
+         THEN ADD:
+         <%- include('partials/header') -%>  to the top of each .ejs file
+         <%- include('partials/footer') -%>  to the bottom of each .ejs file
+
 12.Post Requests, (Run npm install -g npm)
     post route is for sending or adding new data to the database to be used later.
     adding a form to the route
