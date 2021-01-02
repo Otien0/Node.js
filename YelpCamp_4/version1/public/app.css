@@ -1,26 +1,30 @@
+.navbar-dark {
+	background-color: rgb(29, 19, 141);
+	color: white;
+	margin-bottom: 5%;
+}
+
+ul .nav-link {
+	color: white;
+}
+
+.view {
+	margin-left: 5%;
+}
+
+.text-center {
+	margin-bottom: 10%;
+}
+
 .footer {
-	border-top: 1px solid rgb(7, 0, 0);
+	/* border-top: 1rem solid rgb(252, 249, 249); */
 	padding-top: 1%;
+	margin-top: 5%;
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	background-color: rgb(25, 0, 255);
+	background-color: rgb(29, 19, 141);
 	color: white;
 	text-align: center;
 }
-
-/* html {
-	height: 100%;
-}
-
-body {
-	min-height: 100%;
-	display: grid;
-	grid-template-rows: 1fr auto;
-}
-
-.footer {
-	grid-row-start: 2;
-	grid-row-end: 3;
-} */
