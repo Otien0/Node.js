@@ -1,7 +1,22 @@
-node
-locate the folder
-run the node server by node f_name(.js) i.e: node app.js
- steps;
+node --- to check the version.
+
+mkdir to create a new dir of your app, cd then ;
+
+run npm init  // to create a package.json file
+
+While at the the npm init call, while editing the package.json file, use "description" of your own,
+ and use "app.js" to be entry point instead of "index.js", and
+change author name to be yours.
+
+Inside same dir, install both expressjs and ejs by:
+                              npm install express --save
+                              npm install ejs
+
+Create the app file by : touch app.js
+
+run the node server by node f_name(.js) =>>  i.e: node app.js
+
+ steps/basic app examples;
 1.echo.js
 2.grader.js
 3.Demo-App
@@ -16,7 +31,7 @@ run the node server by node f_name(.js) i.e: node app.js
       
 6.The package.json/package.json Demo
   npm init to create a package.json file
-  inside the file> npm install express/any other package --save .. this will be stored under dependencies
+  inside the App folder, run > npm install express/any other package --save .. this will be stored under dependencies
   
 7.Route Params/ Routing order
 
@@ -43,18 +58,33 @@ run the node server by node f_name(.js) i.e: node app.js
          <%- include('partials/header') -%>  to the top of each .ejs file
          <%- include('partials/footer') -%>  to the bottom of each .ejs file
 
-12.Post Requests, (Run npm install -g npm)
+    EXPRESS ROUTING:
+                    Routing refers to how an application’s endpoints (URIs) respond to client requests.
+    Link to Documentation: https://expressjs.com/en/guide/routing.html
+                           https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
+12.Post Requests, (Run npm install -g npm  // to install npm globally on your machine)
     post route is for sending or adding new data to the database to be used later.
-    adding a form to the route
-    npm install body-parser --save go online read body-parser docs
+    adding a form to the route:
+          Link to documentation; https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms
+                                 https://flaviocopes.com/express-forms/
+                                 
+    // check on this also: https://medium.com/khojchakra/a-simple-nodejs-server-without-express-js-6773122d365f
+    
+          BODY-PARSER:
+     Link to Documentation: http://expressjs.com/en/resources/middleware/body-parser.html
+    npm install body-parser --save
     res.redirect(takes the name of the route and redirects you to that route)
+    
+       YELP CAMP:
 13. YelpCampBasics Initial Routes: Add a Landing page, mkdir views/touch landing.ejs... add campground page 
-    that lists all campgrounds with name & image
+    that lists all campgrounds with name & image. It should be an array with objects inside.
+    
     a)Yelpcamp Layout: add layout and basic stylling, create header & footer partials, add in Bootstrap cdn
     b) creating New Campgrounds: setup new campground POST route, Add in body-parser, setup route to show form, Add basic 
     unstylled form.
     c)Styling Campgrounds: add a better header/title, make campgrounds display in a grid
     d)Style the navbar and form: add a navbar to all templates, style the new campground forms
+    
 
 
 
