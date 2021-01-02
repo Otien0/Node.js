@@ -14,9 +14,9 @@ var campgrounds = [
     { name: "Camp Carnelleyâ€™s", image: "https://i.imgur.com/eTOogftb.jpg" },
     { name: "El Karama", image: "https://i.imgur.com/4RSDCkkb.jpg" },
     { name: "Kiboko Camp", image: "https://i.imgur.com/J9Gp9cKb.jpg" },
-    { name: "Mamba Village", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSt1SFOCVjBA6ZCNnE6B2RQ_JCMb-tg2rl_2CEW8T0fRMejYLiQ" },
-    { name: "Thompson Falls Lodge Camp", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQno76laIU6zk5ZBR9aqyaSrJRNl3W7AwpsHKBKfCfOpQV4_E5N" },
-    { name: "Olorgesailie", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcScR8tgzL-7xe5EZGWOAOlLl7lDUo6s7KWAzSxQ4jdUlGFMYzuG" },
+    { name: "Mamba Village", image: "https://i.imgur.com/eUonOB7.jpg" },
+    { name: "Thompson Falls Lodge Camp", image: "https://i.imgur.com/OHTymcR.jpg" },
+    { name: "Olorgesailie", image: "https://i.imgur.com/tyU7nrC.jpg" },
     { name: "Hell\'s Gate Gorge and National Park", image: "https://i.imgur.com/WFyTL7yb.jpg" }
 ]
 
