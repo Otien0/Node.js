@@ -3,7 +3,8 @@ var app = express()
 var bodyParser = require("body-parser")
 
 app.use(bodyParser.urlencoded({ extended: true }))
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 var campgrounds = [
     { name: "Camp Malta", image: "https://i.imgur.com/uEepnRVb.jpg" },
@@ -17,7 +18,7 @@ var campgrounds = [
     { name: "Mamba Village", image: "https://i.imgur.com/eUonOB7.jpg" },
     { name: "Thompson Falls Lodge Camp", image: "https://i.imgur.com/OHTymcR.jpg" },
     { name: "Olorgesailie", image: "https://i.imgur.com/tyU7nrC.jpg" },
-    { name: "Hell\'s Gate Gorge and National Park", image: "https://i.imgur.com/WFyTL7yb.jpg" }
+    { name: "Hell\'s Gate Gorge", image: "https://i.imgur.com/WFyTL7yb.jpg" }
 ]
 
 app.get("/", function (req, res) {
