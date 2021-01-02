@@ -1,0 +1,26 @@
+.footer {
+	border-top: 1px solid rgb(7, 0, 0);
+	padding-top: 1%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(25, 0, 255);
+	color: white;
+	text-align: center;
+}
+
+/* html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+.footer {
+	grid-row-start: 2;
+	grid-row-end: 3;
+} */
