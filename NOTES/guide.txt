@@ -80,10 +80,23 @@ run the node server by node f_name(.js) =>>  i.e: node app.js
     that lists all campgrounds with name & image. It should be an array with objects inside.
     
     a)Yelpcamp Layout: add layout and basic stylling, create header & footer partials, add in Bootstrap cdn
+                      Link: https://getbootstrap.com/docs/3.3/getting-started/
+                      
     b) creating New Campgrounds: setup new campground POST route, Add in body-parser, setup route to show form, Add basic 
     unstylled form.
+    
     c)Styling Campgrounds: add a better header/title, make campgrounds display in a grid
+        Under this we need to learn more about Bootsrap grid.
+        Link to futher bootstrap grid documentation:
+                                                  https://mdbootstrap.com/docs/standard/layout/grid/
+                                                  https://getbootstrap.com/docs/4.0/examples/grid/
+                                                  https://www.w3schools.com/bootstrap/bootstrap_templates.asp
+                                                  
     d)Style the navbar and form: add a navbar to all templates, style the new campground forms
+           Nav && Navbar links:
+                               https://getbootstrap.com/docs/5.0/components/navs-tabs/ 
+                               https://getbootstrap.com/docs/5.0/components/navbar/
+    
     
 
 
