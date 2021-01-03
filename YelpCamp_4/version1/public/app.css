@@ -9,11 +9,29 @@ ul .nav-link {
 }
 
 .view {
-	margin-left: 5%;
+	display: block;
+	margin-top: 2%;
+	font: 1.5rem bold;
+	text-decoration: none;
 }
 
 .text-center {
 	margin-bottom: 10%;
+}
+
+.container {
+	margin-bottom: 10%;
+}
+
+.img {
+	width: 250px;
+	height: 200px;
+}
+
+.form-control,
+#Submit,
+#back {
+	margin: 5%;
 }
 
 .footer {
