@@ -75,7 +75,7 @@ run the node server by node f_name(.js) =>>  i.e: node app.js
     npm install body-parser --save
     res.redirect(takes the name of the route and redirects you to that route)
     
-       YELP CAMP:
+       YELP CAMP Version 1:
 13. YelpCampBasics Initial Routes: Add a Landing page, mkdir views/touch landing.ejs... add campground page 
     that lists all campgrounds with name & image. It should be an array with objects inside.
     
@@ -97,7 +97,4 @@ run the node server by node f_name(.js) =>>  i.e: node app.js
                                https://getbootstrap.com/docs/5.0/components/navs-tabs/ 
                                https://getbootstrap.com/docs/5.0/components/navbar/
     
-    
-
-
-
+14. Databases/MongoDB
