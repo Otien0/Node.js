@@ -1,0 +1,67 @@
+mongoose:
+1. Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
+
+          Link to Documentation:
+                                https://mongoosejs.com/docs/
+                                https://www.npmjs.com/package/mongoose
+                                https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/
+                                https://dev.to/christinegaraudy/mongodb-with-mongoose-for-beginners-34oc
+                                https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
+                                https://www.freecodecamp.org/news/mongodb-mongoose-node-tutorial/
+                                
+                                
+inside backend Database_dir/ OR Your workspace directory, Run : npm install mongoose --save
+
+Demo on Mongoose/Connecting to DB:
+      Inside Database Dir, run; touch cats.js, 
+      Install mongoose & don't save it by running; npm install mongoose 
+      Connect with mongoose using the online docs, through Schema formart, then run node cat.js to start the app
+      Check if the cat is added to mongo shell db by running: show dbs on mongo shell, then use it to show the collections.
+
+      Some Changes in the Mongoose Documentation & Other Links:    
+                          https://mongoosejs.com/docs/deprecations.html
+                          https://www.jenniferbland.com/saving-data-to-mongodb-database-from-node-js-application-tutorial/
+                          https://www.freecodecamp.org/forum/t/creating-and-saving-a-record-with-mongodb/255208/2
+                          https://mongodb.github.io/node-mongodb-native/api-generated/collection.html
+NOTE:
+######## connecting to mongoose, use:  
+mongoose.connect("mongodb://localhost/(DB_NAME)", { useNewUrlParser: true, useUnifiedTopology: true}); #######
+
+                     ALSO:
+if error, go to : sudo nano /etc/mongod.conf // and change security to disabled then back to mongo shell..
+
+        YELPCAMP VERSION 2:
+2. YelpCamp Data Persistence/Adding Mongoose
+   #Style the campgrounds page
+   a) Add a better header/title
+   b) Make campgrounds display in a grid
+   
+   #style the Navbar and Form
+   a) Add a navbar to all templates
+   b) Style the new campground form
+   
+   #Add Mongoose
+   a) Install and configure mongoose
+   b) Set up campground model 
+   c) Use campground model inside the routes
+   
+3. Yelpcamp campground show page prt 1:
+   #Show page
+   a)Review the RESTful routes and understand the order of restful routes.
+   b)add descriptiom to the campground under Show route
+   
+   ~$ sudo service mongodb stop
+
+~$ sudo rm /var/lib/mongodb/mongod.lock
+
+~$ sudo mongod --repair --dbpath /var/lib/mongodb
+
+~$ sudo mongod --fork --logpath /var/lib/mongodb/mongodb.log --dbpath /var/lib/mongodb
+
+~$ sudo service mongodb startround model
+   c)Show db.collection.drop() // deletes all the campgrounds collection in our DB
+   d)Add a show route/template
+   
+  7 RESTFUL ROUTES: INDEX, NEW, CREATE, SHOW, EDIT, UPDATE, DESTROY
+  
+  To Begin on RESTful Routes
