@@ -1,0 +1,95 @@
+DATABASES:
+Database- a collection of information/data, and has some interface.
+
+SQL(Relational DB) NOSQL(Non-Relational DB)
+
+MEAN STACK: Mongodb, Expressjs, Angularjs, & Nodejs.
+MERN STACK: Mongodb, Expressjs, Reactjs, & Nodejs.
+
+INTRO TO MONGODB:
+Mongodb is a non-relational database, very flexible & dynamic.
+
+Installing mongo: 
+a)mkdir data(outside workspace)
+b)echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@" ' > mongod .. on same dir with 'data_dir'
+                        OR TRY:
+        echo 'mongod --dbpath data --nojournal "$@"' > mongod
+c)chmod a+x mongod ... on same workspace with 'data_dir'
+
+d)start mongodb by running the mongod script on your project root:  ./mongod  ... on same workspace with 'data_dir' & mongod
+   if incase it stops, restart it by running ./mongod again
+e)leave mongo daemon(mongod) running on the background of your terminal, then;
+f)open a new terminal and run mongo ... on same workspace with 'data_dir' & mongod ... here comand(mongo) opens up the mongo 
+  shell which is used same as the js console for testings and debugging.
+g) Type help on the mongo shell to see the list of manual pages for assistance
+h) Type show dbs, to see list of existing databases, if db is empty, it won't be shown
+i) use "db_name", i.e use moryso // here we are switching to a database by name moryso.
+j) show collections, to show the availabele collection of names inside our db-moryso.
+k) type use "db_name" i.e; use moryso, // moryso here is the name of our db, which is being used or created by same comand
+   if not existing on the list of the available databases.
+l) Learn the basics of CRUD using mongo shell.
+
+  
+Mongodb Manuals: (https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/)
+ 1. Start MongoDB: sudo systemctl start mongod
+ 2. if error; run ; sudo systemctl daemon-reload then try the start command above again
+ 3. Verify that MongoDB has started successfully: sudo systemctl status mongod
+ 4. You can optionally ensure that MongoDB will start following a system reboot by issuing the following command:
+      sudo systemctl enable mongod
+ 5. Stop MongoDB: sudo systemctl stop mongod
+ 6. Restart MongoDB: sudo systemctl restart mongod
+ 
+ <7> when configuring "mongod.conf" file, use: sudo nano /etc/mongod.conf
+     save then; sudo service mongod restart , then:
+     sudo systemctl start mongodb
+     sudo systemctl enable mongodb
+     also visit: https://stackoverflow.com/questions/37371081/what-does-the-bindip-configuration-option-in-mongodb-do
+     OR : https://stackoverflow.com/questions/43589290/mongo-service-start-or-restart-always-fail/48122382
+ 
+ 
+ 8. Begin using MongoDB: mongo
+    https://docs.mongodb.com/manual/mongo/
+ 9. Adding your <mongodb installation dir>/bin to the PATH environment variable allows you to type mongo instead of having 
+    to go to the <mongodb installation dir>/bin directory or specify the full path to the binary.
+    
+ 10. INCASE IT FAILS TO CONNECT:
+     Step 1: Remove lock file.
+sudo rm /var/lib/mongodb/mongod.lock
+
+Step 2: Repair mongodb. 
+sudo mongod --repair 
+
+Step 3: start mongodb.
+sudo start mongodb 
+or
+sudo service mongodb start
+
+Step 4: Check status of mongodb.
+sudo status mongodb 
+or   
+sudo service mongodb status
+
+Step 5: Start mongo console.
+mongo  
+        #######OR########
+        ~$ sudo service mongodb stop
+
+~$ sudo rm /var/lib/mongodb/mongod.lock
+
+~$ sudo mongod --repair --dbpath /var/lib/mongodb
+
+~$ sudo mongod --fork --logpath /var/lib/mongodb/mongodb.log --dbpath /var/lib/mongodb
+
+~$ sudo service mongodb start
+ 
+ 
+ 11. CRUD-CREATE, READ UPDATE & DELETE/DESTROY
+     Four CRUD commands: insert, find, update, remove
+     
+     exapmle: db.dogs.insert() => db- refers to the database that we are in, dogs-collection, insert is the command that
+      will insert data to the db 
+      https://stackoverflow.com/questions/35881662/show-dbs-gives-not-authorized-to-execute-command-error/43403072
+     to prove the collection created, use: show collections
+     to view all collections in our db, use: db.dogs.find()
+     db.dogs.update()
+     db.dogs.remove().Limit // to specify the number of collections you want to remove
