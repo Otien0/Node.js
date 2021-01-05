@@ -3,9 +3,11 @@
 	color: white;
 	margin-bottom: 5%;
 }
+
 ul .nav-link {
 	color: white;
 }
+
 .view {
 	display: block;
 	margin-top: 2%;
@@ -13,7 +15,7 @@ ul .nav-link {
 	text-decoration: none;
 }
 
-.text-center{
+.text-center {
 	margin-bottom: 10%;
 }
 
@@ -26,7 +28,9 @@ ul .nav-link {
 	height: 200px;
 }
 
-.form-control, #Submit, #back {
+.form-control,
+#Submit,
+#back {
 	margin: 5%;
 }
 
