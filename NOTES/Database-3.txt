@@ -49,19 +49,43 @@ if error, go to : sudo nano /etc/mongod.conf // and change security to disabled 
    #Show page
    a)Review the RESTful routes and understand the order of restful routes.
    b)add descriptiom to the campground under Show route
-   
-   ~$ sudo service mongodb stop
-
-~$ sudo rm /var/lib/mongodb/mongod.lock
-
-~$ sudo mongod --repair --dbpath /var/lib/mongodb
-
-~$ sudo mongod --fork --logpath /var/lib/mongodb/mongodb.log --dbpath /var/lib/mongodb
-
-~$ sudo service mongodb startround model
    c)Show db.collection.drop() // deletes all the campgrounds collection in our DB
-   d)Add a show route/template
+   d)Add a show route/template.
+
+Debugging MONGODB SERVER:
+                         ~$ sudo service mongodb stop
+
+                         ~$ sudo rm /var/lib/mongodb/mongod.lock
+
+                         ~$ sudo mongod --repair --dbpath /var/lib/mongodb
+
+                         ~$ sudo mongod --fork --logpath /var/lib/mongodb/mongodb.log --dbpath /var/lib/mongodb
+
+                         ~$ sudo service mongodb startround model
+
+        RESTFUL API:
+4. REST(Representational state transfer) -- Representational state transfer is a software architectural style that defines a set
+   of constraints to be used for creating Web services. Web services that conform to the REST architectural style, called RESTful
+   Web services, provide interoperability between computer systems on the internet.
    
-  7 RESTFUL ROUTES: INDEX, NEW, CREATE, SHOW, EDIT, UPDATE, DESTROY
-  
-  To Begin on RESTful Routes
+   ==>> 7 RESTFUL ROUTES: INDEX, NEW, CREATE, SHOW, EDIT, UPDATE, DESTROY
+   
+   Documentation Links:
+                       https://restfulapi.net/
+                       https://www.codecademy.com/articles/what-is-rest
+                       https://nordicapis.com/building-a-restful-api-using-node-js-and-mongodb/
+                       https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/
+                       https://rapidapi.com/blog/how-to-create-an-api-with-mongodb/
+                 https://1337x.to/torrent/4285318/FreeCourseWeb-Udemy-Node-js-REST-API-with-Express-MongoDB-Solid-Architecture/     
+                 https://www.mongodb.com/blog/post/building-your-first-application-mongodb-creating-rest-api-using-mean-stack-part-1
+                 https://livebook.manning.com/book/getting-mean-with-mongo-express-angular-and-node-second-edition/chapter-6/22
+                 
+                 
+      REST: BLOG APP;               
+5. #Blog Index:
+               Setup the Blog App,
+               Create the Blog Model,
+               Add index route and template,
+               Add a simple Navbar.
+               
+                       
