@@ -1,0 +1,34 @@
+body {
+    min-height: 100vh;
+    /* position: relative; */
+}
+html {
+    height: 100%;
+}
+
+i.icon {
+    font-size: 1.5rem;
+}
+
+/* .fixed.menu {
+    margin-bottom: 5%;
+} */
+
+.container.main {
+    margin-top: 10%;
+}
+
+
+
+.footer {
+    /* border-top: 1rem solid rgb(252, 249, 249); */
+    padding-top: 1%;
+    margin-top: 5%;
+    clear: both;
+    position: relative;
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgb(10, 10, 14);
+    color: white;
+    text-align: center;
+}
