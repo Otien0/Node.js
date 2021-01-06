@@ -81,11 +81,55 @@ Debugging MONGODB SERVER:
                  https://livebook.manning.com/book/getting-mean-with-mongo-express-angular-and-node-second-edition/chapter-6/22
                  
                  
-      REST: BLOG APP;               
-5. #Blog Index:
+5.     REST: BLOG APP;
+            Links to further: https://itnext.io/blog-app-using-mern-stack-b0b4d69d7ea1
+                              https://github.com/obwansan/RESTful-Blog-App            
+  #Blog Index:
                Setup the Blog App,
                Create the Blog Model,
                Add index route and template,
-               Add a simple Navbar.
-               
+                     
+  #Basic Layout:
+                Add header and footer partials
+                Include Semantic UI
+                        Link:  https://semantic-ui.com/
+                               https://cdnjs.com/libraries/semantic-ui   //search for semantic.css on the search bar
+                                                                        //copy the semantic.min.css
+                 
+                Add a simple Navbar: =>>On semantic UI, Click on menu, go to Collections/menu,
+                 to view the types of navbars available.
+  
+  #Putting C in CRUD:
+                     Add a new route.
+                     Add a new teemplate.
+                     Add CREATE route.
+                     Add CREATE template.
+                     
+  #Show Route:
+              Adding a show route.
+              Adding a show template.
+              Add links to show page.
+              Style show template.  ==>> https://semantic-ui.com/views/item.html
+                // use .toDateString() to style your "created-date" or moment.js library.
+                // replace the "=" with "-" in blog.body under shwo template, to write the contents 
+                    using html styles when posting new blog item.
+                //Use .substring(0, any number) to limit characters being displayed on the blog index page.
+                
+ #Edit/Update Routes:
+                     Add Edit Route.
+                     Add Edit Form.
+                     Add Update Route.
+                     Add Update Form.
+                     Add Method-Override. // npm install method-override --save
+                                Link:    https://www.npmjs.com/package/method-override
+                                         https://levelup.gitconnected.com/using-the-method-override-express-middleware-3853a115a5ca
+                             Deprecation Link: https://mongoosejs.com/docs/deprecations.html#findandmodify
+                             
+ #DESTROY ROUTE:
+                Add Destroy Route.
+                Add Edit And Destroy Links/Buttons.
+                
+ #Final Updates:
+                Sanitize Blog Body. ==>>: https://www.npmjs.com/package/express-sanitizer
+                Style index Route.
                        
