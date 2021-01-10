@@ -27,22 +27,30 @@ var User = mongoose.model("User", userSchema);
 //     name: "Morris Otieno"
 // });
 
-Post.create({
-    title: "Understanding Express.js version-3",
-    content: "Do more projects on EJS Concept and repeat until it sinks onto your brain!"
-}, function (err, post) {
-    User.findOne({ email: "morrisotieno03@gmail.com" }, function (err, foundUser) {
-        if (err) {
-            console.log(err);
-        } else {
-            foundUser.posts.push(post);
-            foundUser.save(function (err, data) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log(data);
-                }
-            });
-        }
-    });
+// Post.create({
+//     title: "Understanding Express.js version-3",
+//     content: "Do more projects on EJS Concept and repeat until it sinks onto your brain!"
+// }, function(err, post){
+//     User.findOne({email: "morrisotieno03@gmail.com"}, function(err, foundUser){
+//         if(err){
+//             console.log(err);
+//         } else {
+//             foundUser.posts.push(post);
+//             foundUser.save(function(err, data){
+//                 if(err){
+//                     console.log(err);
+//                 } else {
+//                     console.log(data);
+//                 }
+//             });
+//         }
+//     });
+// });
+
+User.findOne({ email: "morrisotieno03@gmail.com" }).populate("posts").exec(function (err, user) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(user);
+    }
 });
