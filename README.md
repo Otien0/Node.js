@@ -1,4 +1,3 @@
-# Node.js server
-simple programs and backend projects in Node.js
-
-# using several node.js packages and server-side platforms
+# Backend projects using Node.js.
+# MERN Architecture and Projects.
+# using several node.js libraries, packages and server-side platforms.
