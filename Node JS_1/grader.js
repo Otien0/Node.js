@@ -10,7 +10,7 @@ function average(scores){
     return Math.round(avg)
 }
 
-console.log('Average score for Applied Mathematics is : ' + scores)
+console.log('Average score for Applied Mathematics is : ' )
 var scores = [90,98,89,100,100,86,94]
 console.log(average(scores))
 
