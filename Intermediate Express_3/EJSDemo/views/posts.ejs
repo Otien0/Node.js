@@ -1,23 +1,25 @@
 <%- include('partials/header') -%>
 <link rel="stylesheet" href="app.css">
+<div class="posts">
+    <h1>The posts Page</h1>
 
-<h1>The posts Page</h1>
+    <!-- <% for(var i = 0; i < posts.length; i++){ %>
+        <li>
+            <%= posts[i].title %> - <strong><%= posts[i].Author %></strong>
+        </li>
+    <% } %> -->
 
-<!-- <% for(var i = 0; i < posts.length; i++){ %>
-    <li>
-         <%= posts[i].title %> - <strong><%= posts[i].Author %></strong>
-    </li>
-<% } %> -->
+    <!-- <% posts.forEach(function(post){ %>
+        <li>
+            <%= post.title %> - <strong><%= post.Author %></strong>
+        </li>
+    <% }) %> -->
 
-<!-- <% posts.forEach(function(post){ %>
+    <% posts.forEach(post => { %>
     <li>
         <%= post.title %> - <strong><%= post.Author %></strong>
     </li>
-<% }) %> -->
+    <% }) %>
+</div>
 
-<% posts.forEach(post => { %>
-<li>
-    <%= post.title %> - <strong><%= post.Author %></strong>
-</li>
-<% }) %>
 <%- include('partials/footer') -%>

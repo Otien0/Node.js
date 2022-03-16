@@ -40,8 +40,8 @@ run the node server by node f_name(.js) =>>  i.e: node app.js
 9. Intermediate Expressjs => :Templates(.ejs_files)> mkdir EJSDemo/npm init/touch app.js/npm install express --save
    EJS(Embedded JavaScript)<%= %> /render
       Link to Documentation: https://ejs.co/
-      Under same/main directory, install ejs by: npm install ejs  "to be saved under package.json file"
-   Under same EJSDemo-directory, we make a separate directory called views to hold the html templates(.ejs_files).
+      Under same/main directory, install ejs by: npm install ejs --save  "to be saved under package.json file"
+   Under same EJSDemo-(root)directory, we make a separate directory called views to hold the html templates(.ejs_files).
    NOTE: INCLUDE => app.set("view engine", "ejs"); __under app.js   // this is in order for the views-template files to be rendered.
    
 10.EJS Conditionals and loops > difference betwwen <%=  %> & <%  %> is that:

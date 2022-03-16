@@ -1,8 +1,8 @@
 var express = require("express")
 var app = express()
 
-app.use(express.static("public"))
-app.set("view engine", "ejs")
+app.use(express.static("public")) // For CSS Files
+app.set("view engine", "ejs") //To Render .ejs files
 
 app.get("/",function(req, res){
     res.render("home")
