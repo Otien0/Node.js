@@ -5,11 +5,12 @@ SQL(Relational DB) NOSQL(Non-Relational DB)
 
 MEAN STACK: Mongodb, Expressjs, Angularjs, & Nodejs.
 MERN STACK: Mongodb, Expressjs, Reactjs, & Nodejs.
+MEVN STACK: Mongodb, Expressjs, Vuejs, & Nodejs.
 
 INTRO TO MONGODB:
 Mongodb is a non-relational database, very flexible & dynamic.
 
-Installing mongo: 
+Installing mongo__ LINUX ENVIRONMENT: 
 a)mkdir data(outside workspace)
 b)echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@" ' > mongod .. on same dir with 'data_dir'
                         OR TRY:
@@ -86,7 +87,7 @@ mongo
  11. CRUD-CREATE, READ UPDATE & DELETE/DESTROY
      Four CRUD commands: insert, find, update, remove
      
-     exapmle: db.dogs.insert() => db- refers to the database that we are in, dogs-collection, insert is the command that
+     exapmle: db.dogs.insertOne() => db- refers to the database that we are in, dogs-collection, insert is the command that
       will insert data to the db 
       https://stackoverflow.com/questions/35881662/show-dbs-gives-not-authorized-to-execute-command-error/43403072
      to prove the collection created, use: show collections
