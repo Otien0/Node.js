@@ -2,6 +2,7 @@
 	background-color: rgb(29, 19, 141);
 	color: white;
 	margin-bottom: 5%;
+	padding-bottom: 1%;
 }
 
 ul .nav-link {
@@ -26,6 +27,7 @@ ul .nav-link {
 .img {
 	width: 250px;
 	height: 200px;
+	position: cover;
 }
 
 .form-control,
@@ -38,7 +40,7 @@ ul .nav-link {
 	/* border-top: 1rem solid rgb(252, 249, 249); */
 	padding-top: 1%;
 	margin-top: 5%;
-	position: fixed;
+	/* position: fixed; */
 	left: 0;
 	bottom: 0;
 	width: 100%;
