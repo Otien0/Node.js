@@ -1,5 +1,5 @@
 body {
-    min-height: 100vh;
+    height: 100%;
     /* position: relative; */
 }
 
@@ -29,7 +29,7 @@ i.icon {
     padding-top: 1%;
     margin-top: 5%;
     clear: both;
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: 3.5rem;
     background-color: rgb(10, 10, 14);

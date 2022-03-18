@@ -1,7 +1,7 @@
 var bodyParser = require("body-parser"),
     methodOverride = require('method-override'),
     expressSanitizer = require('express-sanitizer');
-express = require("express"),
+    express = require("express"),
     mongoose = require("mongoose"),
     app = express()
 
@@ -9,7 +9,7 @@ express = require("express"),
 
 mongoose.connect("mongodb://localhost/restful_blog_app", { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(expressSanitizer());
+app.use(expressSanitizer()); //This one goes after bodyParser, as REQUIRED.
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(methodOverride('_method'));

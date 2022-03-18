@@ -32,6 +32,7 @@ l) Learn the basics of CRUD using mongo shell.
 
   
 Mongodb Manuals: (https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/)
+https://www.digitalocean.com/community/tutorials/how-to-use-mongodb-compass
  1. Start MongoDB: sudo systemctl start mongod
  2. if error; run ; sudo systemctl daemon-reload then try the start command above again
  3. Verify that MongoDB has started successfully: sudo systemctl status mongod
