@@ -19,8 +19,8 @@ var userSchema = new mongoose.Schema({
 var User = mongoose.model("User", userSchema);
 
 // var newUser = new User ({
-//     email: "steveotieno@gmail.com",
-//     name: "Steven Otieno"
+//     email: "jacobothis@gmail.com",
+//     name: "Jacob Odhiambo"
 // });
 
 // newUser.posts.push({
@@ -48,9 +48,9 @@ var User = mongoose.model("User", userSchema);
 //     }
 // });
 
-User.findOne({name: "Steven Otieno"}, function(err, user){
+User.findOne({name: "Jacob Odhiambo"}, function(err, user){
     if(err){
-        // console.log(err);
+        console.log(err);
     } else{
         user.posts.push({
             title: "Understanding Node.js",

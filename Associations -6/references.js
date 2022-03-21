@@ -28,8 +28,8 @@ var User = mongoose.model("User", userSchema);
 // });
 
 // Post.create({
-//     title: "Understanding Express.js version-3",
-//     content: "Do more projects on EJS Concept and repeat until it sinks onto your brain!"
+//     title: "Understanding Express.js version-4",
+//     content: "Eplore more on EJS Concept and repeat until it sinks onto your brain!"
 // }, function(err, post){
 //     User.findOne({email: "morrisotieno03@gmail.com"}, function(err, foundUser){
 //         if(err){
