@@ -1,0 +1,29 @@
+NODE-JS AUTHENTICATION:
+
+Links :
+	https://www.section.io/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/
+	https://www.codementor.io/@manashkumarchakrobortty/authentication-and-authorization-in-node-js-19brdvhsyw
+	https://medium.com/quick-code/handling-authentication-and-authorization-with-node-7f9548fedde8
+	https://www.topcoder.com/thrive/articles/authentication-and-authorization-in-express-js-api-using-jwt
+	https://auth0.com/blog/create-a-simple-and-secure-node-express-app/
+	
+
+a) Use middleware for authentication
+
+	When creating protected routes in Express, you need to know the user's authentication status before executing the logic of route controllers.
+	Thus, authentication in Express is a step in the request-response cycle, which you can implement as middleware.
+
+b) JWT in node JS
+	JSON Web Token is an open standard for securely transferring data within parties using a JSON object.
+ 	JWT is used for stateless authentication mechanisms for users and providers,this means maintaining session
+ 	is on the client-side instead of storing sessions on the server.
+
+c) Here we using pasport js tool for authentication;
+   			https://www.passportjs.org/
+
+d) Passport Local;
+   			https://github.com/jaredhanson/passport-local
+
+e) passport-local-mongoose;
+			https://github.com/saintedlama/passport-local-mongoose
+   

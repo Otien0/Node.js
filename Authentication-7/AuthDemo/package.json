@@ -1,0 +1,19 @@
+{
+  "name": "authdemo",
+  "version": "1.0.0",
+  "description": "node-js authentication app demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mourice-oduor/Node.js.git"
+  },
+  "author": "mourice-oduor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mourice-oduor/Node.js/issues"
+  },
+  "homepage": "https://github.com/mourice-oduor/Node.js#readme"
+}
