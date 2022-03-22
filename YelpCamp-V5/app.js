@@ -9,6 +9,10 @@ const seedDB                = require("./seeds"),
       passport              = require("passport"),
       passportLocalMongoose = require("passport-local-mongoose");
 
+const commentRoutes         = require("./routes/comments"),
+      campgroundRoutes      = require("./routes/campgrounds"),
+      indexRoutes           = require("./routes/index");
+
 mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -33,7 +37,9 @@ app.use(function(req, res, next){
     next();
 })
 
-
+app.use(indexRoutes);
+app.use(campgroundRoutes);
+app.use(commentRoutes);
 
 app.listen(3000, function(req, res){
     console.log("YelpCamp server running on port 3000")
