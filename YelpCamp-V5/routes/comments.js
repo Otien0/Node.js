@@ -1,5 +1,8 @@
-const express = require("express"),
-      router  = express.Router();
+const express    = require("express"),
+      router     = express.Router(),
+      Campground = require("../models/campground"),
+      Comment    = require("../models/comment");
+
 
 //Comments ROUTE
 router.get("/campgrounds/:id/comments/new",isLoggedIn, function(req, res){
@@ -30,5 +33,12 @@ router.post("/campgrounds/:id/comments",isLoggedIn, function(req, res){
         }
     })
 })
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login")
+}
 
 module.exports = router;
