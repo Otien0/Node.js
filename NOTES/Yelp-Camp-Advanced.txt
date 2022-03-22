@@ -36,3 +36,4 @@ Links :
 
 Version 5::
 Refactor the RESTFUL ROUTES in YelpCamp::
+mkdir routes >> inside rotes add the templates(campgrounds.js, comments.js, index.js)
