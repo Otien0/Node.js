@@ -1,0 +1,89 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	margin-bottom: 60px;
+}
+
+.navbar-dark {
+	background-color: rgb(29, 19, 141);
+	color: white;
+	margin-bottom: 5%;
+	/* height: 2.5rem; */
+	/* padding-bottom: 1%; */
+}
+ul .nav-link {
+	color: white;
+}
+.view {
+	display: block;
+	margin-top: 2%;
+	font: 1.5rem bold;
+	text-decoration: none;
+}
+
+.text-center{
+	margin-bottom: 10%;
+}
+
+.container {
+	margin-bottom: 10%;
+}
+
+.img {
+	width: 250px;
+	height: 200px;
+}
+
+.form-control, #Submit, #back {
+	margin: 5%;
+}
+
+/* Thumbnail styles */
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+/* Google Map styles */
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+/* Campground show page delete button */
+.delete-form {
+	display: inline-block;
+}
+
+/* Flexbox grid fix */
+.flex-wrap {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+
+.footer {
+	/* border-top: 1rem solid rgb(252, 249, 249); */
+	padding-top: 1%;
+	margin-top: 5%;
+	clear: both;
+	/* position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%; */
+	/* position: relative; */
+	height: 2.5rem;
+	width: 100%;
+	background-color: rgb(29, 19, 141);
+	color: white;
+	text-align: center;
+}
