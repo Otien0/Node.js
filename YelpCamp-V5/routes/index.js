@@ -1,11 +1,11 @@
-const express = require("express"),
-      router  = express.Router();
+const express  = require("express"),
+      router   = express.Router(),
+      passport = require("passport"),
+      User     = require("../models/user");
 
 router.get("/", function(req, res){
     res.render("landing")
 });
-
-
 
 // AUTH ROUTES
 router.get("/register", function(req, res){
