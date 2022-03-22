@@ -1,0 +1,57 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	margin-bottom: 60px;
+}
+
+.navbar-dark {
+	background-color: rgb(29, 19, 141);
+	color: white;
+	margin-bottom: 5%;
+	padding-bottom: 1%;
+}
+ul .nav-link {
+	color: white;
+}
+.view {
+	display: block;
+	margin-top: 2%;
+	font: 1.5rem bold;
+	text-decoration: none;
+}
+
+.img {
+	width: 600px;
+	height: 400px;
+}
+.form-control, #Submit, #back {
+	margin: 5%;
+}
+
+.logout {
+	display: block;
+	/* align-items: center; */
+	margin: 5% auto;
+}
+.out {
+	color: #fff;
+}
+
+.footer {
+	/* border-top: 1rem solid rgb(252, 249, 249); */
+	padding-top: 1%;
+	margin-top: 5%;
+	clear: both;
+	/* position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%; */
+	/* position: relative; */
+	height: 3.5rem;
+	width: 100%;
+	background-color: rgb(29, 19, 141);
+	color: white;
+	text-align: center;
+}

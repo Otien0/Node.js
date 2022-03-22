@@ -27,3 +27,32 @@ d) Passport Local;
 e) passport-local-mongoose;
 			https://github.com/saintedlama/passport-local-mongoose
    
+
+>> packages to install:
+	npm install express mongoose ejs body-parser --save
+	npm install passport passport-local --save
+	npm install passport-local-mongoose --save
+	npm install express-session --save
+
+>> Create user model and configure passport for authentication
+	create user.js file for user authentication
+	add register routes and form for authentication.
+	add login routes and form for authentication.
+	add logout route and "isLoggedIn" Middleware to display some pages when user is-Logged-in.
+
+Add Authentication functionality to our node-js Apps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

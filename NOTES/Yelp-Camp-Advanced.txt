@@ -10,3 +10,25 @@
 
 6. Add the new comment form.
 7. Add sidebar to showpage with some great styling on the comments.
+
+Version 4::
+ADD AUTHENTICATION TO YELPCAMP:
+Links :
+	https://www.section.io/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/
+	https://www.codementor.io/@manashkumarchakrobortty/authentication-and-authorization-in-node-js-19brdvhsyw
+	https://medium.com/quick-code/handling-authentication-and-authorization-with-node-7f9548fedde8
+	https://www.topcoder.com/thrive/articles/authentication-and-authorization-in-express-js-api-using-jwt
+	https://auth0.com/blog/create-a-simple-and-secure-node-express-app/
+
+
+>> packages to install:
+	npm install express mongoose ejs body-parser --save
+	npm install passport passport-local --save
+	npm install passport-local-mongoose --save
+	npm install express-session --save
+
+8. >> Create user model and configure passport for authentication
+	create user.js file for user authentication
+	add register routes and form for authentication.
+	add login routes and form for authentication.
+	add logout route and "isLoggedIn" Middleware to display some pages when user is-Logged-in.
