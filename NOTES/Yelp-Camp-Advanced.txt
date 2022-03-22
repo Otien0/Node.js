@@ -1,0 +1,12 @@
+1. Add a seeds.js file
+2. Display comments on Campground Show Page.
+3. Add nested routes.
+4. Add the comment new and create routes;
+
+	NEW::    campgrounds:id/comments/new   >> GET Request
+	CREATE:: campgrounds:id/comments   >> POST Request
+
+5. Refactor the templates by creatting new folders > views/campgrounds $$ views/comments.
+
+6. Add the new comment form.
+7. Add sidebar to showpage with some great styling on the comments.
