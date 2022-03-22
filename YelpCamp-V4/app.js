@@ -1,10 +1,13 @@
-const seedDB = require("./seeds"),
-    express    = require("express"),
-    app        = express(),
-    bodyParser = require("body-parser"),
-    mongoose   = require("mongoose"),
-    Campground = require("./models/campground"),
-    Comment    = require("./models/comment");
+const seedDB                = require("./seeds"),
+      express               = require("express"),
+      app                   = express(),
+      bodyParser            = require("body-parser"),
+      mongoose              = require("mongoose"),
+      Campground            = require("./models/campground"),
+      Comment               = require("./models/comment");
+      User                  = require('./models/user'),
+      passport              = require("passport"),
+      passportLocalMongoose = require("passport-local-mongoose");
 
 mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
@@ -12,37 +15,23 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 seedDB();
 
+// Passport Configurations
+app.use(require("express-session")({
+    secret: "Moryso is the best Node-js Developer in the universe",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-// Campground.create(
-//     {
-//         name: "Rapids Camp, Sagana", 
-//         image: "https://i.imgur.com/8G5IehWb.jpg",
-//         description: "Camp friendly to your wallet. You will get a tent, cooking utensils, refrigeration, cutlery, gas burners, jikos, a barbeque burner, and meeting facilities like chairs and whiteboards. Facilities which are provided at an additional fee include charcoal, firewood for the camp fire, sleeping bags, cooking gas and a cook or a chef."
-//     }, 
-//     function(err, campground){
-//         if(err){
-//             console.log(err);
-//         } else{
-//             console.log("NEWLY CREATED CAMPGROUND:")
-//             console.log(campground)
-//         }
-//     });
-
-// var campgrounds = [
-//     { name: "Camp Malta", image: "https://i.imgur.com/uEepnRVb.jpg" },
-//     { name: "Wildebeest Eco Camp", image: "https://i.imgur.com/crBESiab.jpg" },
-//     { name: "Camp Ya Kanzi", image: "https://i.imgur.com/a785ZXCb.jpg" },
-//     { name: "Rapids Camp, Sagana", image: "https://i.imgur.com/8G5IehWb.jpg" },
-//     { name: "Malewa Bush Ventures", image: "https://i.imgur.com/1ZqCkDEb.jpg" },
-//     { name: "Camp Carnelley�s", image: "https://i.imgur.com/eTOogftb.jpg" },
-//     { name: "El Karama", image: "https://i.imgur.com/4RSDCkkb.jpg" },
-//     { name: "Kiboko Camp", image: "https://i.imgur.com/J9Gp9cKb.jpg" },
-//     { name: "Mamba Village", image: "https://i.imgur.com/eUonOB7s.jpg" },
-//     { name: "Thompson Falls Lodge Camp", image: "https://i.imgur.com/OHTymcR.jpg" },
-//     { name: "Olorgesailie", image: "https://i.imgur.com/tyU7nrC.jpg" },
-//     { name: "Hell\'s Gate Gorge", image: "https://i.imgur.com/WFyTL7yb.jpg" }
-// ]
-
+//To display only specific content when not logged in
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+})
 
 app.get("/", function(req, res){
     res.render("landing")
@@ -55,7 +44,7 @@ app.get("/campgrounds", function(req, res){
         if(err){
             console.log(err);
         } else{
-            res.render("campgrounds/index", {campgrounds: allCampgrounds})
+            res.render("campgrounds/index", {campgrounds: allCampgrounds, currentUser: req.user})
         }
     });
     
@@ -99,7 +88,7 @@ app.get("/campgrounds/:id", function(req, res){
 });
 
 //Comments ROUTE
-app.get("/campgrounds/:id/comments/new", function(req, res){
+app.get("/campgrounds/:id/comments/new",isLoggedIn, function(req, res){
     Campground.findById(req.params.id, function(err, campground){
         if(err){
             console.log(err);
@@ -109,7 +98,7 @@ app.get("/campgrounds/:id/comments/new", function(req, res){
     });
 });
 
-app.post("/campgrounds/:id/comments", function(req, res){
+app.post("/campgrounds/:id/comments",isLoggedIn, function(req, res){
     Campground.findById(req.params.id, function(err, campground){
         if(err){
             console.log(err);
@@ -128,6 +117,55 @@ app.post("/campgrounds/:id/comments", function(req, res){
     })
 })
 
+// AUTH ROUTES
+app.get("/register", function(req, res){
+    res.render("register")
+});
+
+//Handling User signup
+app.post("/register", function(req, res){
+    var newUser = new User({username: req.body.username})
+    User.register(newUser, req.body.password, function(err, user){
+        if(err){
+            console.log(err)
+            return res.render("register")
+        }
+        passport.authenticate("local")(req, res, function(){
+            res.redirect("/campgrounds")
+        })
+    })
+})
+
+// LOGIN ROUTES
+app.get("/login", function(req, res){
+    res.render("login")
+})
+//Handling login using a middleware
+app.post("/login", passport.authenticate("local", {
+    successRedirect: "/campgrounds",
+    failureRedirect: "/login"
+}), function(req, res){
+});
+
+//LOGOUT
+app.get("/logout", function(req, res){
+    req.logOut();
+   res.redirect("/");
+});
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login")
+}
+
+
+
+
+
+
+
 app.listen(3000, function(req, res){
-    console.log("YelpCamp server serving on port 3000")
+    console.log("YelpCamp server running on port 3000")
 })

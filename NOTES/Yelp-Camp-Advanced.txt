@@ -28,7 +28,11 @@ Links :
 	npm install express-session --save
 
 8. >> Create user model and configure passport for authentication
-	create user.js file for user authentication
+	create user.js file under models[dir] for user configuration
 	add register routes and form for authentication.
 	add login routes and form for authentication.
 	add logout route and "isLoggedIn" Middleware to display some pages when user is-Logged-in.
+	show/hide auth links in Navbar correctly. // using "req.user" inbuilt function.
+
+Version 5::
+Refactor the RESTFUL ROUTES in YelpCamp::
