@@ -1,0 +1,17 @@
+{
+  "name": "version2",
+  "version": "1.0.0",
+  "description": "YelpCamp version1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "moorice-oduor",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "mongoose": "^5.13.14"
+  }
+}
