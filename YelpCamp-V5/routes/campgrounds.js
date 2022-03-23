@@ -34,8 +34,10 @@ router.post("/", isLoggedIn, function(req, res){
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
             console.log(err);
-        } else{
-            console.log(author)
+        } 
+        else 
+        {
+            // console.log(author)
             //redirect back to campgrounds page
             res.redirect("/campgrounds")
         }
