@@ -7,6 +7,7 @@ const seedDB                = require("./seeds"),
       Comment               = require("./models/comment");
       User                  = require('./models/user'),
       passport              = require("passport"),
+      methodOverride        = require("method-override"),
       passportLocalMongoose = require("passport-local-mongoose");
 
 const commentRoutes         = require("./routes/comments"),
@@ -17,7 +18,8 @@ mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true, useUni
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-seedDB();
+app.use(methodOverride("_method"));
+// seedDB();
 
 // Passport Configurations
 app.use(require("express-session")({
@@ -37,9 +39,9 @@ app.use(function(req, res, next){
     next();
 })
 
-app.use(indexRoutes);
-app.use(campgroundRoutes);
-app.use(commentRoutes);
+app.use("/", indexRoutes);
+app.use("/campgrounds", campgroundRoutes);
+app.use("/campgrounds/:id/comments", commentRoutes);
 
 app.listen(3000, function(req, res){
     console.log("YelpCamp server running on port 3000")

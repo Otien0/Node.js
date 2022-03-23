@@ -1,11 +1,11 @@
 const express    = require("express"),
-      router     = express.Router(),
+      router     = express.Router({mergeParams: true}),
       Campground = require("../models/campground"),
       Comment    = require("../models/comment");
 
 
 //Comments ROUTE
-router.get("/campgrounds/:id/comments/new",isLoggedIn, function(req, res){
+router.get("/new",isLoggedIn, function(req, res){
     Campground.findById(req.params.id, function(err, campground){
         if(err){
             console.log(err);
@@ -15,7 +15,7 @@ router.get("/campgrounds/:id/comments/new",isLoggedIn, function(req, res){
     });
 });
 
-router.post("/campgrounds/:id/comments",isLoggedIn, function(req, res){
+router.post("/",isLoggedIn, function(req, res){
     Campground.findById(req.params.id, function(err, campground){
         if(err){
             console.log(err);
@@ -25,6 +25,11 @@ router.post("/campgrounds/:id/comments",isLoggedIn, function(req, res){
                 if(err){
                     console.log(err);
                 } else {
+                    // add username and id to comments
+                    comment.author.id = req.user._id;
+                    comment.author.username = req.user.username;
+                    //save comment
+                    comment.save();
                     campground.comments.push(comment);
                     campground.save();
                     res.redirect("/campgrounds/" + campground._id);

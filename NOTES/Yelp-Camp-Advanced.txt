@@ -34,6 +34,16 @@ Links :
 	add logout route and "isLoggedIn" Middleware to display some pages when user is-Logged-in.
 	show/hide auth links in Navbar correctly. // using "req.user" inbuilt function.
 
-Version 5::
-Refactor the RESTFUL ROUTES in YelpCamp::
-mkdir routes >> inside rotes add the templates(campgrounds.js, comments.js, index.js)
+9. Version 5::
+	Refactor the RESTFUL ROUTES in YelpCamp::
+	mkdir routes >> inside rotes add the templates(campgrounds.js, comments.js, index.js)
+	Associate users with comments.
+	Add authors names automatically to the comments.
+	Prevent unauthenticated users from creating new campgrounds.
+	Save username + _id to newly created campgrounds.
+
+
+10. Editting And Deleting Campgrounds::
+	Add Method overide. // npm install method-override --save
+	Add Edit Route for campgrounds.
+	Add Destroy Route And Delete Button.
