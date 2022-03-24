@@ -74,4 +74,10 @@ Links :
 15. UI Imprvement::
 	Uisng Flash messages to display notification alerts.
 	Add bootstrap alerts to header.
+	>>> packages to install:
+		npm install express mongoose ejs body-parser --save
+		npm install passport passport-local --save
+		npm install passport-local-mongoose --save
+		npm install express-session --save
+		npm install method-override --save
 	
