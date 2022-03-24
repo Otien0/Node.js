@@ -47,7 +47,7 @@ Links :
 	Add Method overide. // npm install method-override --save
 	Add Edit Route for campgrounds.
 	Add Destroy Route And Delete Button.
-	NOTE: + "req.params.id" Means the Campground_id we editting.
+	NOTE: + "req.params.id" Means the Campground_id we are editting.
 
 11. Campground Authorization::
 	User can only edit his/her campground.
@@ -67,4 +67,11 @@ Links :
 14. Refactoring Middleware::
 	on top dir> mkdir "middleware"
 	Add an index.js file to input all the middlewares.
+
+
+
+    Version 6::
+15. UI Imprvement::
+	Uisng Flash messages to display notification alerts.
+	Add bootstrap alerts to header.
 	
