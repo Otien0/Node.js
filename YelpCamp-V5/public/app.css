@@ -62,6 +62,7 @@ ul .nav-link {
 /* Campground show page delete button */
 .delete-form {
 	display: inline-block;
+	margin-left: 1rem;
 }
 
 /* Flexbox grid fix */

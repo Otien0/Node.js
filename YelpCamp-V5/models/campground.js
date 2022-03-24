@@ -9,15 +9,15 @@ var campgroundSchema = new mongoose.Schema({
             id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "User"
-            }
-            // username: String
+            },
+            username: String
         },
-    comments: [
-        {
-           type: mongoose.Schema.Types.ObjectId,
-           ref: "Comment"
-        }
-    ]
+        comments: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Comment"
+            }
+        ]
 })
 
 //compiling the schema into a model
