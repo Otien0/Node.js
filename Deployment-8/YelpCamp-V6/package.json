@@ -1,0 +1,12 @@
+{
+  "name": "yelpcamp-v6",
+  "version": "1.0.0",
+  "description": "version -6 Deployment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "mourice-oduor",
+  "license": "ISC"
+}
