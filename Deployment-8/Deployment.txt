@@ -3,6 +3,7 @@ DEPLOYMENT::
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
 		https://javascript.plainenglish.io/hosting-node-js-app-on-heroku-in-less-than-5-mins-bc7ce244c8d0
+		https://dev.to/phyllis_yym/how-to-deploy-a-men-stack-app-from-our-local-machines-to-heroku-3ih1
 		
 	1) Ensure you have git-bash/cmd installed.
 
@@ -32,7 +33,7 @@ DEPLOYMENT::
 						}
 
 
-          	heroku create "APP_NAME" -b https://github.com/mars/create-react-app-buildpack.git
+          	heroku create "APP_NAME" -b https://github.com/mars/create-node-app-buildpack.git
 
         	git add .
 
@@ -55,4 +56,5 @@ MERN :::
 	https://www.techmanyu.com/how-to-deploy-your-mern-stack-application-on-heroku-cc4a8fb8d829
 	https://stackoverflow.com/questions/69228146/how-to-deploy-mern-app-to-heroku-with-frontend-inside-of-backend-folder
 	https://www.thapatechnical.com/2021/04/how-to-deploy-mern-projects-on-heroku.html
+
 

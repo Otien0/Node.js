@@ -9,8 +9,9 @@ const seedDB                = require("./seeds"),
       flash                 = require("connect-flash"),
       passport              = require("passport"),
       methodOverride        = require("method-override"),
-      passportLocalMongoose = require("passport-local-mongoose");
-
+      passportLocalMongoose = require("passport-local-mongoose"),
+      PORT                  = process.env.PORT || 3000;
+      
 const commentRoutes         = require("./routes/comments"),
       campgroundRoutes      = require("./routes/campgrounds"),
       indexRoutes           = require("./routes/index");
@@ -47,6 +48,9 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(3000, function(req, res){
-    console.log("YelpCamp server running on port 3000")
-})
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${PORT}`);
+  });
+// app.listen(3000, function(req, res){
+//     console.log("YelpCamp server running on port 3000")
+// })
