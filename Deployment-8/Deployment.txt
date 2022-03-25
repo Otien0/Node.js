@@ -43,7 +43,13 @@ DEPLOYMENT::
 
         	heroku open    // to view your already deployed app
 
+		heroku run ls // to check the details of the app on heroku cloud.
+		heroku run ls node_modules // to check the node modules installed on the app on heroku cloud.
+
 	7) That's it, CONGRATULATIONS, your NodeJs App is now LIVE!!!
+
+	8) Connect to Database using Mongolab:
+		
 
 
 
