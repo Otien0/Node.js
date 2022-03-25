@@ -31,6 +31,11 @@ ul .nav-link {
 	margin-bottom: 10%;
 }
 
+.flash {
+	width: 50%;
+	place-items: center;
+}
+
 .img {
 	width: 250px;
 	height: 200px;

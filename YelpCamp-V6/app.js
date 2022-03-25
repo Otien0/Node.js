@@ -6,6 +6,7 @@ const seedDB                = require("./seeds"),
       Campground            = require("./models/campground"),
       Comment               = require("./models/comment");
       User                  = require('./models/user'),
+      flash                 = require("connect-flash"),
       passport              = require("passport"),
       methodOverride        = require("method-override"),
       passportLocalMongoose = require("passport-local-mongoose");
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
+app.use(flash());
 // seedDB();
 
 // Passport Configurations
@@ -36,6 +38,8 @@ passport.deserializeUser(User.deserializeUser());
 //To display only specific content when not logged in
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 })
 

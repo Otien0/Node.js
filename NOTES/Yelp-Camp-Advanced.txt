@@ -72,7 +72,7 @@ Links :
 
     Version 6::
 15. UI Imprvement::
-	Uisng Flash messages to display notification alerts.
+	Uisng Flash messages to display notification alerts.  // https://getbootstrap.com/docs/5.1/components/alerts/
 	Add bootstrap alerts to header.
 	>>> packages to install:
 		npm install express mongoose ejs body-parser --save
@@ -80,4 +80,18 @@ Links :
 		npm install passport-local-mongoose --save
 		npm install express-session --save
 		npm install method-override --save
+		npm install connect-flash --save
 	
+	Links:
+		https://www.npmjs.com/package/connect-flash
+		https://github.com/jaredhanson/connect-flash
+		https://www.tabnine.com/code/javascript/modules/connect-flash
+		https://gist.github.com/brianmacarthur/a4e3e0093d368aa8e423
+
+		
+16. DEPLOYMENT::
+    a) Heroku:
+		https://devcenter.heroku.com/articles/deploying-nodejs
+		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
+		https://javascript.plainenglish.io/hosting-node-js-app-on-heroku-in-less-than-5-mins-bc7ce244c8d0
+		
