@@ -71,7 +71,7 @@ Links :
 
 
     Version 6::
-15. UI Imprvement::
+15. UI Improvement::
 	Uisng Flash messages to display notification alerts.  // https://getbootstrap.com/docs/5.1/components/alerts/
 	Add bootstrap alerts to header.
 	>>> packages to install:
