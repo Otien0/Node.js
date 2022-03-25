@@ -1,0 +1,46 @@
+DEPLOYMENT::
+    a) Heroku:
+		https://devcenter.heroku.com/articles/deploying-nodejs
+		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
+		https://javascript.plainenglish.io/hosting-node-js-app-on-heroku-in-less-than-5-mins-bc7ce244c8d0
+		
+	1) Ensure you have git-bash/cmd installed.
+
+	2) Go to Heroku Account sign up, i.e; 
+							https://dashboard.heroku.com/
+
+	3) Download the Heroku Toolbelt - a command line application(CLI) for managing your Heroku account.
+
+	4) The CLI can be downloaded here depending on your OS:
+							https://devcenter.heroku.com/articles/heroku-cli
+
+	5) Run heroku login from your project directory through terminal or command prompt and fill in your Heroku credentials.
+		The terminal may also direct you to heroku site to login, confirming your account.
+
+	6) Ensure you are into the right directory of your App, then type;
+
+           	git init
+
+	7) Create Heroku Procfile:
+		Go to your app’s root and create a file by the name of Procfile and add the following code in it:
+				web: node app.js
+
+	8) Add the Script in Package JSON:
+		Go to pacakge.json file and the following script in it:
+				"scripts": {
+    						"start": "node app.js"
+						}
+
+
+          	heroku create "APP_NAME" -b https://github.com/mars/create-react-app-buildpack.git
+
+        	git add .
+
+        	git commit -m "Initial commit"
+
+        	git push heroku master
+
+        	heroku open    // to view your already deployed app
+
+	7) That's it, CONGRATULATIONS, your NodeJs App is now LIVE!!!
+
