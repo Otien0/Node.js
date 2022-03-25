@@ -1,12 +1,12 @@
 {
-  "name": "version2",
+  "name": "version6",
   "version": "1.0.0",
-  "description": "YelpCamp version1",
+  "description": "YelpCamp version6",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "moorice-oduor",
+  "author": "mourice-oduor",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.2",
