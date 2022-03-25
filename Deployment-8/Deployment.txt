@@ -44,3 +44,15 @@ DEPLOYMENT::
 
 	7) That's it, CONGRATULATIONS, your NodeJs App is now LIVE!!!
 
+
+
+
+MERN :::
+	https://coursework.vschool.io/deploying-mern-app-to-heroku/
+	https://www.freecodecamp.org/news/deploying-a-mern-application-using-mongodb-atlas-to-heroku/
+	https://dev.to/hawacodes/deploying-a-mern-app-with-heroku-3km7
+	https://vivek-kaushal.medium.com/deploying-a-mern-web-app-to-heroku-b12c74c8b3c4
+	https://www.techmanyu.com/how-to-deploy-your-mern-stack-application-on-heroku-cc4a8fb8d829
+	https://stackoverflow.com/questions/69228146/how-to-deploy-mern-app-to-heroku-with-frontend-inside-of-backend-folder
+	https://www.thapatechnical.com/2021/04/how-to-deploy-mern-projects-on-heroku.html
+
