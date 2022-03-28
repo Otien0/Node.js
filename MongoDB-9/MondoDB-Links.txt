@@ -7,8 +7,16 @@ https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6
 MONGODB COMPASS:
 	https://www.digitalocean.com/community/tutorials/how-to-use-mongodb-compass
 
+Limits and Thresholds:
+	https://www.mongodb.com/docs/manual/reference/limits/
+
+MONGODB DATA TYPES:
+	https://www.mongodb.com/docs/manual/reference/bson-types/
+
 
 MONGODB_DRIVERS(Nodejs)::
+	https://university.mongodb.com/courses/M220JS/about
+	https://www.mongodb.com/docs/drivers/
 	https://www.mongodb.com/docs/drivers/node/current/
 	https://mongodb.github.io/node-mongodb-native/4.4/
 
