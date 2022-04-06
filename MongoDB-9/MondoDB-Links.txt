@@ -20,6 +20,16 @@ MONGODB_DRIVERS(Nodejs)::
 	https://www.mongodb.com/docs/drivers/node/current/
 	https://mongodb.github.io/node-mongodb-native/4.4/
 
+Data schema and Data model in mongodb:
+	> A schema is fundamentally describing the data construct of a document (in MongoDB collection).
+	  This schema defines the name of each item of data, and the type of data, whether it is a string, 
+	  number, date, Boolean, and so on. A model is a compiled version of the schema.
+	
+	> Data modeling is the process of defining how data is stored and what relationships exist between 
+	  different entities in our data. Data modeling aims to visually represent the relationship between different entities in data.
+
+	> The database schema is one that contains list of attributes and instructions to tell the database engine how data is organised
+	  whereas Data model is a collection of conceptional tools for describing data, data-relationship and consistency constraints.
 
 
 
