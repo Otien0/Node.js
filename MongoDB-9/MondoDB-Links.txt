@@ -31,6 +31,12 @@ Data schema and Data model in mongodb:
 	> The database schema is one that contains list of attributes and instructions to tell the database engine how data is organised
 	  whereas Data model is a collection of conceptional tools for describing data, data-relationship and consistency constraints.
 
+	> https://www.mongodb.com/docs/manual/data-modeling/
+	  https://www.mongodb.com/docs/manual/core/data-modeling-introduction/
+	  https://www.mongodb.com/docs/manual/applications/data-models/
+
+
+
 
 
 
