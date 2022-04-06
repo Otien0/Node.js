@@ -36,6 +36,27 @@ Data schema and Data model in mongodb:
 	  https://www.mongodb.com/docs/manual/applications/data-models/
 
 
+Data Associations:
+                     https://docs.mongodb.com/manual/applications/data-models-relationships/
+                     https://www.studytonight.com/mongodb/relationships-in-mongodb
+                     one:one
+                     one:many
+                     many:many
+      a)Embedding Data:
+                      https://docs.mongodb.com/manual/core/data-modeling-introduction/
+                      https://docs.mongodb.com/manual/core/data-model-design/
+                      https://docs.mongodb.com/manual/tutorial/model-embedded-one-to-many-relationships-between-documents/
+                      
+      b) Referencing Data:
+                         https://docs.mongodb.com/manual/reference/database-references/
+                         https://docs.mongodb.com/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/
+                         https://dev.to/oluseyeo/how-to-create-relationships-with-mongoose-and-node-js-11c8
+                         
+      c) Module.Exports:
+         Involves moving models into separate files;
+                    https://stackoverflow.com/questions/5311334/what-is-the-purpose-of-node-js-module-exports-and-how-do-you-use-it
+                    https://nodejs.org/api/modules.html
+                    https://www.tutorialsteacher.com/nodejs/nodejs-module-exports
 
 
 
