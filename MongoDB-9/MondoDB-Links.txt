@@ -59,6 +59,11 @@ Data Associations:
                     https://nodejs.org/api/modules.html
                     https://www.tutorialsteacher.com/nodejs/nodejs-module-exports
 
+Aggregation in MongoDB::
+	https://www.geeksforgeeks.org/aggregation-in-mongodb/
+	https://www.mongodb.com/docs/manual/aggregation/
+	https://www.mongodb.com/docs/manual/reference/method/db.collection.aggregate/
+
 
 
 
