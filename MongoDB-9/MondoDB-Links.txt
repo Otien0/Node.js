@@ -67,6 +67,9 @@ Aggregation in MongoDB::
 	https://www.mongodb.com/docs/manual/aggregation/
 	https://www.mongodb.com/docs/manual/reference/method/db.collection.aggregate/
 
+Analyze Your Data Schema Using Compass:
+	https://www.mongodb.com/docs/compass/master/schema/
+
 
 
 
