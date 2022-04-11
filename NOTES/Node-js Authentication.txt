@@ -46,7 +46,9 @@ Add Authentication functionality to our node-js Apps.
 
 AUTHDEMO2 APP =>> New Updates:
 	a) Using bcrypt password hashing functions.
+		https://www.npmjs.com/package/bcrypt
 		npm i bcrypt
+
 
 
 
