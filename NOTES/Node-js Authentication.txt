@@ -49,6 +49,8 @@ AUTHDEMO2 APP =>> New Updates:
 		https://www.npmjs.com/package/bcrypt
 		npm i bcrypt
 
+	b) Using bcrypt app in authentication:
+		npm i  express ejs mongoose bcrypt --save
 
 
 
