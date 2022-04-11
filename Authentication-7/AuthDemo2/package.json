@@ -1,0 +1,19 @@
+{
+  "name": "authdemo2",
+  "version": "2.0.0",
+  "description": "Authentication And Authorization Version 2.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mourice-oduor/Node.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mourice-oduor/Node.js/issues"
+  },
+  "homepage": "https://github.com/mourice-oduor/Node.js#readme"
+}
