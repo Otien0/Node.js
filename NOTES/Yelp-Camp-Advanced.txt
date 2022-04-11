@@ -114,6 +114,16 @@ Links :
 
 18. Adding Cookies:
 		https://expressjs.com/en/4x/api.html#res.cookie
+
+	Using Cookie Parser Middleware:
+			https://www.npmjs.com/package/cookie-parser
+
+	Signing Cookies:
+		When using cookie-parser middleware, this method also supports signed cookies.
+ 		Simply include the signed option set to true.
+ 		Then res.cookie() will use the secret passed to cookieParser(secret) to sign the value.
+		https://www.freeformatter.com/hmac-generator.html
+
 		
 
 

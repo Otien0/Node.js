@@ -1,7 +1,8 @@
-const express = require('express');
-const app = express();
+const express       = require('express'),
+      app           = express(),
+      cookieParser  = require('cookie-parser');
 
-const cookieParser = require('cookie-parser');
+
 app.use(cookieParser('thisismysecret'));
 
 app.get('/greet', (req, res) => {
@@ -10,13 +11,13 @@ app.get('/greet', (req, res) => {
 })
 
 app.get('/setname', (req, res) => {
-    res.cookie('name', 'henrietta');
-    res.cookie('animal', 'harlequin shrimp')
+    res.cookie('name', 'morys0');
+    res.cookie('animal', 'oliphant ')
     res.send('OK SENT YOU A COOKIE!!!')
 })
 
 app.get('/getsignedcookie', (req, res) => {
-    res.cookie('fruit', 'grape', { signed: true })
+    res.cookie('fruit', 'Avocado', { signed: true })
     res.send('OK SIGNED YOUR FRUIT COOKIE!')
 })
 
@@ -27,5 +28,5 @@ app.get('/verifyfruit', (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log("SERVING!")
+    console.log("Cookies Serving on Port 3000")
 })
