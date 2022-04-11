@@ -65,6 +65,9 @@ Links :
 	Hide/show edit/delete butttons.
 
 14. Refactoring Middleware::
+	https://expressjs.com/en/guide/using-middleware.html
+	https://github.com/expressjs/morgan
+
 	on top dir> mkdir "middleware"
 	Add an index.js file to input all the middlewares.
 
@@ -81,6 +84,8 @@ Links :
 		npm install express-session --save
 		npm install method-override --save
 		npm install connect-flash --save
+		npm install ejs-mate --save
+		npm install joi --save
 	
 	Links:
 		https://www.npmjs.com/package/connect-flash
@@ -88,8 +93,30 @@ Links :
 		https://www.tabnine.com/code/javascript/modules/connect-flash
 		https://gist.github.com/brianmacarthur/a4e3e0093d368aa8e423
 
+	Using Unsplash API for generating images:
+		https://unsplash.com/
+		https://unsplash.com/developers
+
+	For the Campgroud, we'll use this collection:
+		https://unsplash.com/collections/483251/in-the-woods
+
+16. Errors and Validating Data::
+	a) Client-Side Validation:
+					https://getbootstrap.com/docs/5.1/forms/validation/
+
+	b) Server-Side Validation:
+		Using JOI for Schema and data Validation for Javascript
+			https://joi.dev/api/?v=17.6.0
+
+17. Adding the Reviews Model::
+	This implicates the One To Many Relationships, same as comments.
+	All the steps for implementing comments.
+
+18. Adding Cookies:
 		
-16. DEPLOYMENT::
+
+
+19. DEPLOYMENT::
     a) Heroku:
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/

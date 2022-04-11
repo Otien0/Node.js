@@ -4,18 +4,32 @@ html {
 }
 body {
 	margin-bottom: 60px;
+	height: 100vh;
 }
 
 .navbar-dark {
 	background-color: rgb(29, 19, 141);
 	color: white;
 	margin-bottom: 5%;
+	position: fixed;
 	/* height: 2.5rem; */
 	/* padding-bottom: 1%; */
+}
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
 }
 ul .nav-link {
 	color: white;
 }
+
+/* #verticle-line {
+	width: 0px;
+	height: 100%;
+	background: gray;
+} */
+
 .view {
 	display: block;
 	margin-top: 2%;
@@ -39,6 +53,10 @@ ul .nav-link {
 .img {
 	width: 250px;
 	height: 200px;
+}
+
+.auth {
+	margin-left: 1rem;
 }
 
 .form-control, #Submit, #back {

@@ -27,7 +27,17 @@ router.post("/", middleware.isLoggedIn, function(req, res){
         id: req.user._id,
         username: req.user.username
     }
-    var newCampground = {name: name, image: image, description: desc, author: author}
+    var price = req.body.price
+    // geocoder.geocode(req.body.location, function (err, data) {
+    //     if (err || data.status === 'ZERO_RESULTS') {
+    //       req.flash('error', 'Invalid address');
+    //       return res.redirect('back');
+    //     }
+    // var lat = data.results[0].geometry.location.lat;
+    // var lng = data.results[0].geometry.location.lng;
+    var location = req.body.location
+
+    var newCampground = {name: name, image: image, description: desc, author: author, price: price, location: location}
 
     //campgrounds.push(newCampground)
     Campground.create(newCampground, function(err, newlyCreated){
@@ -92,6 +102,8 @@ router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res) {
         }
     });
 });
+
+//REVIEWS POST-ROUTE
 
 
 module.exports = router;
