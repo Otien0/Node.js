@@ -1,0 +1,26 @@
+Header:
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/app.css">
+</head>
+<body>
+
+
+Footer:
+
+  <p>Trademark 2020 @moryso</p>
+</body>
+</html>
+
+NOTE WHILE USING PARTIALS, USE THIS FORMAT:
+
+<%- include('partials/header'); -%>
+<h1>
+  Title
+</h1>
+<p>
+  My page
+</p>
+<%- include('partials/footer'); -%>
