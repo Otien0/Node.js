@@ -111,6 +111,9 @@ Links :
 17. Adding the Reviews Model::
 	This implicates the One To Many Relationships, same as comments.
 	All the steps for implementing comments.
+
+18. YELPCAMP VERSION 7-More Advanced::
+	
 		
 
 

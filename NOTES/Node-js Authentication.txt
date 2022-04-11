@@ -18,7 +18,7 @@ b) JWT in node JS
  	JWT is used for stateless authentication mechanisms for users and providers,this means maintaining session
  	is on the client-side instead of storing sessions on the server.
 
-c) Here we using pasport js tool for authentication;
+c) Here we using pasport-js tool for authentication;
    			https://www.passportjs.org/
 
 d) Passport Local;
