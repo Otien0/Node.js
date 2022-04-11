@@ -3,11 +3,18 @@ const express               = require("express"),
       bodyParser            = require("body-parser"),
       mongoose              = require("mongoose"),
       User                  = require('./models/user'),
-      passport              = require("passport"),
-    //   LocalStrategy         = require("passport-local"),
-      passportLocalMongoose = require("passport-local-mongoose");
+      bcrypt                = require('bcrypt'),
+      session               = require('express-session');
 
-mongoose.connect("mongodb://localhost/Auth_DB", {useNewUrlParser: true, useUnifiedTopology: true});
+
+const requireLogin = (req, res, next) => {
+    if (!req.session.user_id) {
+        return res.redirect('/login')
+    }
+    next();
+}
+
+mongoose.connect("mongodb://localhost/Auth_DB2", {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -16,65 +23,56 @@ app.use(require("express-session")({
     resave: false,
     saveUninitialized: false
 }));
-app.use(passport.initialize());
-app.use(passport.session());
-// passport.use(new LocalStrategy(User.authenticate()));
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
-app.get("/", function(req, res){
+
+app.get("/", (req, res) => {
     res.render("home");
 })
 
-app.get("/secret", isLoggedIn, function(req, res){
-    res.render("secret");
-})
-
 // AUTH ROUTES
-app.get("/register", function(req, res){
+app.get("/register", (req, res) => {
     res.render("register")
 });
 
-//Handling User signup
-app.post("/register", function(req, res){
-    req.body.username
-    req.body.password
-    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
-        if(err){
-            console.log(err)
-            return res.render("register")
-        }
-        passport.authenticate("local")(req, res, function(){
-            res.redirect("/secret")
-        })
-    })
+//Handling User SignUp > Post Request
+app.post('/register', async (req, res) => {
+    const { password, username } = req.body;
+    const user = new User({ username, password })
+    await user.save();
+    req.session.user_id = user._id;
+    res.redirect('/')
 })
 
 // LOGIN ROUTES
-app.get("/login", function(req, res){
+app.get("/login", (req, res) => {
     res.render("login")
 })
-//Handling login using a middleware
-app.post("/login", passport.authenticate("local", {
-    successRedirect: "/secret",
-    failureRedirect: "/login"
-}), function(req, res){
-});
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    const foundUser = await User.findAndValidate(username, password);
+    if (foundUser) {
+        req.session.user_id = foundUser._id;
+        res.redirect('/secret');
+    }
+    else {
+        res.redirect('/login')
+    }
+})
 
 //LOGOUT
-app.get("/logout", function(req, res){
-    req.logOut();
-    res.redirect("/");
-});
+app.post('/logout', (req, res) => {
+    req.session.user_id = null;
+    // req.session.destroy();
+    res.redirect('/');
+})
 
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    res.redirect("/login")
-}
+app.get('/secret', requireLogin, (req, res) => {
+    res.render('secret')
+})
+app.get('/topsecret', requireLogin, (req, res) => {
+    res.send("TOP SECRET!!!")
+})
 
-app.listen(3000, function(req, res){
+app.listen(3000, (req, res) => {
     console.log("Auth-Demo server running on port 3000")
 })
