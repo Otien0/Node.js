@@ -1,0 +1,19 @@
+{
+  "name": "express-sessions-11",
+  "version": "1.0.0",
+  "description": "Express Sessions Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mourice-oduor/Node.js.git"
+  },
+  "author": "mourice-oduor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mourice-oduor/Node.js/issues"
+  },
+  "homepage": "https://github.com/mourice-oduor/Node.js#readme"
+}
