@@ -125,6 +125,8 @@ Links :
 											https://github.com/LunarLogic/starability
 
 19. Adding Images:
+	Here, we are using Cloudinary image upload API:
+								https://cloudinary.com/
 	
 
 
@@ -136,4 +138,10 @@ Links :
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
 		https://javascript.plainenglish.io/hosting-node-js-app-on-heroku-in-less-than-5-mins-bc7ce244c8d0
+
+
+
+
+
+echo "" >.gitignore
 		
