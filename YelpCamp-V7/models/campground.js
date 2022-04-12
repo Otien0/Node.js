@@ -2,8 +2,6 @@ var mongoose = require('mongoose'),
     Review = require('./review'),
     Schema = mongoose.Schema;
 
-// https://res.cloudinary.com/douqbebwk/image/upload/w_300/v1600113904/YelpCamp/gxgle1ovzd2f3dgcpass.png
-
 // SetUp Cloudinary Image-Upload SCHEMA
 const ImageSchema = new Schema({
     url: String,
@@ -18,6 +16,17 @@ ImageSchema.virtual('thumbnail').get(function () {
 const CampgroundSchema = new Schema({
     title: String,
     images: [ImageSchema],
+    geometry: {
+        type: {
+            type: String,
+            enum: ['Point'],
+            required: true
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        }
+    },
     price: Number,
     description: String,
     location: String,
