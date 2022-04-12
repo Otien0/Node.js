@@ -29,6 +29,10 @@ const seedDB = async () => {
             title: `${sample(descriptors)} ${sample(places)}`,
             description: 'Campi ya Kanzi was born in 1975 when Luca first set foot in the Chyulu. It was a childhood dream for 20 years, and become a reality in 1995 when Luca & Antonella moved to the Chyulu permanently. It took a few years to build, during which time we lived in a small tent for more than 24 months… The toilet was a pit in the bush and the shower a bucket on a tree, with stars as the canopy… Luca misses it, Antonella still damages his credit card in retaliation!',
             price,
+            geometry: {
+                type: "Point",
+                coordinates: [-0.71667, 36.43333]
+            },
             images: [
                 {
                     url: 'https://res.cloudinary.com/self-hosted/image/upload/v1649773314/YelpCamp/vaqjuohnqebigakdgki3.jpg',
