@@ -21,7 +21,7 @@ const seedDB                = require("./seeds"),
 const commentRoutes         = require("./routes/comments"),
       campgroundRoutes      = require("./routes/campgrounds"),
       indexRoutes           = require("./routes/index"),
-      reviews               = require('./routes/reviews');
+      reviewRoutes         = require('./routes/reviews');
 
 const sessionConfig = {
     secret: 'thisshouldbeabettersecret!',
@@ -73,7 +73,7 @@ app.use((req, res, next) => {
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
-app.use('/campgrounds/:id/reviews', reviews)
+app.use('/campgrounds/:id/reviews', reviewRoutes)
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
