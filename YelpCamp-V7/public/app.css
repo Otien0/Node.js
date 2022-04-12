@@ -1,28 +1,28 @@
-html {
+/* html {
 	position: relative;
 	min-height: 100%;
 }
 body {
 	margin-bottom: 60px;
 	height: 100vh;
-}
+} */
 
-.navbar-dark {
+/* .navbar-dark {
 	background-color: rgb(29, 19, 141);
 	color: white;
 	margin-bottom: 5%;
 	position: fixed;
 	/* height: 2.5rem; */
 	/* padding-bottom: 1%; */
-}
-.sticky {
+/* } */
+/* .sticky {
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 }
 ul .nav-link {
-	color: white;
-}
+	color: white; */
+/* } */
 
 /* #verticle-line {
 	width: 0px;
@@ -30,20 +30,28 @@ ul .nav-link {
 	background: gray;
 } */
 
+.landing {
+	margin-top: 3%;
+}
+.img-landing {
+	display: block;
+}
 .view {
 	display: block;
 	margin-top: 2%;
+	margin-bottom: 3%;
 	font: 1.5rem bold;
 	text-decoration: none;
+}
+.row {
+	margin: 2%, 1%, 1%, 2%;
+	padding: auto;
 }
 
 .text-center{
 	margin-bottom: 10%;
 }
 
-.container {
-	margin-bottom: 10%;
-}
 
 .flash {
 	width: 50%;
@@ -57,6 +65,9 @@ ul .nav-link {
 
 .auth {
 	margin-left: 1rem;
+}
+.user {
+	color: blue;
 }
 
 .form-control, #Submit, #back {
@@ -95,19 +106,13 @@ ul .nav-link {
 }
 
 
-.footer {
-	/* border-top: 1rem solid rgb(252, 249, 249); */
+/* .footer {
 	padding-top: 1%;
 	margin-top: 5%;
 	clear: both;
-	/* position: fixed;
-    height: 100px;
-    bottom: 0;
-    width: 100%; */
-	/* position: relative; */
 	height: 2.5rem;
 	width: 100%;
 	background-color: rgb(29, 19, 141);
 	color: white;
 	text-align: center;
-}
+} */

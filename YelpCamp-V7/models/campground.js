@@ -1,28 +1,21 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
+
 
 // SetUp SCHEMA
 var campgroundSchema = new mongoose.Schema({
-    name: String,
+    title: String,
     image: String,
     description: String,
     price: Number,
     location: String,
     author: {
-            id: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "User"
-            },
-            username: String
-        },
-    comments: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment"
-        }
-    ],
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     reviews: [
         {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Review'
         }
     ]

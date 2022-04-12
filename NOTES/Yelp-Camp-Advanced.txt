@@ -113,11 +113,24 @@ Links :
 	All the steps for implementing comments.
 
 18. YELPCAMP VERSION 7-More Advanced::
+	Advancing the Review Route and attaching it to an author.
+	Adding the MVC architecture => controllers to refactor the app.
+	Restructuring the routers using some express convention, i.e:
+										https://expressjs.com/en/4x/api.html#router.route
+
+	==>> "router.route(path)" - Which returns an instance of a single route which you can then use to handle HTTP verbs with optional middleware. 
+					    Use router.route() to avoid duplicate route naming and thus typing errors.
+
+	Display a "STAR" Ratings on the review route. using this links:
+											https://github.com/LunarLogic/starability
+
 	
+
+
 		
 
 
-19. DEPLOYMENT::
+20. DEPLOYMENT::
     a) Heroku:
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/

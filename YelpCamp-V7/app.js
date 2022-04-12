@@ -11,12 +11,10 @@ const express               = require("express"),
       catchAsync            = require('./utils/catchAsync'),
       ExpressError          = require('./utils/ExpressError'),
       session               = require('express-session'),
-      seedDB                = require("./seeds"),
-      ExpressError          = require('./utils/ExpressError');
+      seedDB                = require("./seeds");
 
       
-const commentRoutes         = require("./routes/comments"),
-      campgroundRoutes      = require("./routes/campgrounds"),
+const campgroundRoutes      = require("./routes/campgrounds"),
       userRoutes            = require("./routes/users"),
       reviewRoutes          = require('./routes/reviews');
 
@@ -34,8 +32,7 @@ const sessionConfig = {
 
 mongoose.connect("mongodb://localhost/yelp_camp", {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
+    useUnifiedTopology: true
 });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -74,8 +71,12 @@ app.use((req, res, next) => {
 
 app.use("/", userRoutes);
 app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
 app.use('/campgrounds/:id/reviews', reviewRoutes)
+
+app.get('/', (req, res) => {
+    res.render('landing')
+});
+
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))

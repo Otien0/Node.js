@@ -1,7 +1,7 @@
 {
-  "name": "yelpcamp-v6",
+  "name": "yelpcamp-v7",
   "version": "1.0.0",
-  "description": "version -6 Deployment",
+  "description": "version -7 Advanced",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

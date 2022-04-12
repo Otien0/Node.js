@@ -1,87 +1,58 @@
 <%- include('../partials/header') -%>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <p class="lead">YelpCamp</p>
-            <div class="list-group">
-                <li class="list-group-item active">Info 1</li>
-                <li class="list-group-item">Info 2</li>
-                <li class="list-group-item">Info 3</li>
+<link rel="stylesheet" href="/public/stylesheets/stars.css">
+
+<div class="row">
+    <div class="col-6">
+        <div class="card mb-3">
+            <img src="<%= campground.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= campground.title %></h5>
+                <p class="card-text"><%= campground.description %></p>
             </div>
-          <div id="map"></div>
-        </div>
-
-        <!-- <div id="verticle-line"></div> -->
-
-        <div class="col-md-6">
-            <div class="card mb-3">
-                <img class="img-responsive" src="<%= campground.image %>" alt="...">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-muted">Located at: <span class="user"><%= campground.location %></span></li>
+                <li class="list-group-item"><strong>Created by </strong><span class="user"><%= campground.author.username %></span></li>
+                <li class="list-group-item">$<%= campground.price %>/night</li>
+            </ul>
+            <%  if( currentUser && campground.author.equals(currentUser._id))  { %>
                 <div class="card-body">
-                    <h5 class="card-title"><%= campground.name %></h5>
-                    <p class="card-text"><%= campground.description %></p>
+                    <a class="card-link btn btn-info" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+                    <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-muted"> Located at: <%= campground.location %></li>
-                    <li class="list-group-item">$<%= campground.price %>/night</li>
-                </ul>
-                <p class="auth">
-                    Created by: <em><a href="#"><%= campground.author.username %></a></em>
-                </p>
-
-                <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
-                    <div class="card-body">
-                        <a class="card-link btn btn-info" href="/campgrounds/<%=campground._id%>/edit">Edit</a>
-                        <form class="d-inline" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
-                            <button class="btn btn-danger">Delete</button>
-                        </form>
-                    </div>
-                <% } %> 
-            </div>
-
-            <div class="well">
-                <div class="text-right">
-                <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
-                </div>
-                <hr>
-                <% campground.comments.forEach(function(comment){ %>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <strong><%= comment.author.username %></strong>
-                            <span class="pull-right">10 days ago %></span>
-                            <div>
-                                <p><%= comment.text %></p>
-                            </div>
-                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-                                <a class="btn btn-xs btn-warning" 
-                                    href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">
-                                    Edit
-                                </a>
-                                <form class="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
-                                </form>
-                            <% } %>     
-                        </div>
-                    </div>
-                <% }) %> 
-            </div>
-
-            <div>
-                <a class="btn btn-primary" href="/campgrounds" id="back">Back</a>
+            <% } %>
+            <div class="card-footer text-muted">
+                2 days ago
+                <p><i>Login to leave a review</i></p>
             </div>
         </div>
 
-        <!-- <div id="verticle-line"></div> -->
-
-        <div class="col-md-3">
+    </div>
+    <div class="col-6">
+        <% if(currentUser){ %>
             <h2>Leave a Review</h2>
             <form action="/campgrounds/<%=campground._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label class="form-label" for="rating">Rating</label>
                     <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating">
-                </div>
+                </div> -->
+                <fieldset class="starability-basic">
+                    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                    <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                    <label for="first-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                </fieldset>
                 <div class="mb-3">
-                    <label class="form-label" for="body">Review</label>
+                    <label class="form-label" for="body">Review Text</label>
                     <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
                     <div class="valid-feedback">
                         Looks good!
@@ -89,22 +60,25 @@
                 </div>
                 <button class="btn btn-success">Submit</button>
             </form>
-
-            <% for(let review of campground.reviews) { %>
-                <div class="card mb-3 ">
-                    <div class="card-body">
-                        <h5 class="card-title">Rating: <%= review.rating %></h5>
-                        <p class="card-text">Review: <%= review.body %></p>
+        <% } %>
+        <% for(let review of campground.reviews) { %>
+            <div class="card mb-3 ">
+                <div class="card-body">
+                    <h5 class="card-title"> <%= review.author.username %></h5>
+                    <p class="starability-result" data-rating="<%= review.rating %>">
+                        Rated: <%= review.rating %> stars
+                    </p>
+                    <!-- <h6 class="card-subtitle mb-2 text-muted">By <%= review.author.username%></h6> -->
+                    <p class="card-text">Review: <%= review.body %></p>
+                    <%  if( currentUser && review.author.equals(currentUser._id))  {%>
                         <form action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
                             <button class="btn btn-sm btn-danger">Delete</button>
                         </form>
-                    </div>
+                    <% } %>
                 </div>
-            <% } %>
-        </div>
-        
+            </div>
+        <% } %>
     </div>
-
 </div>
 
 <%- include('../partials/footer') -%>

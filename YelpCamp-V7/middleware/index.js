@@ -1,69 +1,57 @@
 const Campground    = require("../models/campground"),
-      Comment       = require("../models/comment"),
-      middlewareObj = {};
+      Review        = require('../models/review'),
+      middlewareObj = {},
+      { campgroundSchema, reviewSchema } = require('../schemas'),
+      ExpressError  = require('../utils/ExpressError');
 
 
-middlewareObj.checkCampgroundOwnership = function(req, res, next){
-    if(req.isAuthenticated()){
-        Campground.findById(req.params.id, function(err, foundCampground){
-            if(err){
-                req.flash("error", "Campground not found!");
-                res.redirect("back");
-            }
-            //Check if Logged in user owns the campground
-            else if(foundCampground.author.id.equals(req.user._id))
-            {
-                next();
-            }
-            else {
-                req.flash("error", "Access Denied! - You must be the campground owner.");
-                res.redirect("back");
-            }
-        });
+middlewareObj.isLoggedIn = (req, res, next) => {
+    if (!req.isAuthenticated()) {
+        req.session.returnTo = req.originalUrl  //redirect user to initial page before login
+        req.flash('error', 'You must be signed in first!');
+        return res.redirect('/login');
     }
-    else {
-        req.flash("error", "You need to be logged in to perform the action!");
-        res.redirect("back");
-    }
-    
-};
-
-middlewareObj.checkCommentOwnership = function(req, res, next){
-    if(req.isAuthenticated()){
-        Comment.findById(req.params.comment_id, function(err, foundComment){
-            if(err){
-                res.redirect("back")
-            }
-            //Check if Logged in user owns the comment
-            else if(foundComment.author.id.equals(req.user._id))
-            {
-                next();
-            }
-            else {
-                res.redirect("back");
-            }
-        });
-    }
-    else {
-        req.flash("error", "You need to be logged in to perform the action!");
-        res.redirect("back");
-    }
-    
-};
-
-middlewareObj.isLoggedIn = function(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    req.flash("error", "You need to be logged in to perform the action!")
-    res.redirect("/login");
+    next();
 }
-// middlewareObj.isLoggedIn = (req, res, next) => {
-//     if (!req.isAuthenticated()) {
-//         req.session.returnTo = req.originalUrl
-//         req.flash('error', 'You must be signed in first!');
-//         return res.redirect('/login');
-//     }
-//     next();
-// }
+
+middlewareObj.validateCampground = (req, res, next) => {
+    const { error } = campgroundSchema.validate(req.body);
+    if (error) {
+        const msg = error.details.map(el => el.message).join(',')
+        throw new ExpressError(msg, 400)
+    } else {
+        next();
+    }
+}
+
+middlewareObj.isAuthor = async (req, res, next) => {
+    const { id } = req.params;
+    const campground = await Campground.findById(id);
+    if (!campground.author.equals(req.user._id)) {
+        req.flash('error', 'You do not have permission to do that!');
+        return res.redirect(`/campgrounds/${id}`);
+    }
+    next();
+}
+
+middlewareObj.isReviewAuthor = async (req, res, next) => {
+    const { id, reviewId } = req.params;
+    const review = await Review.findById(reviewId);
+    if (!review.author.equals(req.user._id)) {
+        req.flash('error', 'You do not have permission to do that!');
+        return res.redirect(`/campgrounds/${id}`);
+    }
+    next();
+}
+
+middlewareObj.validateReview = (req, res, next) => {
+    const { error } = reviewSchema.validate(req.body);
+    if (error) {
+        const msg = error.details.map(el => el.message).join(',')
+        throw new ExpressError(msg, 400)
+    } else {
+        next();
+    }
+}
+
 module.exports = middlewareObj;
