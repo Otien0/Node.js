@@ -17,8 +17,8 @@ const seedDB                = require("./seeds"),
       
 const commentRoutes         = require("./routes/comments"),
       campgroundRoutes      = require("./routes/campgrounds"),
-      userRoutes           = require("./routes/users"),
-      reviewRoutes         = require('./routes/reviews');
+      userRoutes            = require("./routes/users"),
+      reviewRoutes          = require('./routes/reviews');
 
 const sessionConfig = {
     secret: 'thisshouldbeabettersecret!',
