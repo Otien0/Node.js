@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 
 // AUTH ROUTES
 router.get("/register", (req, res) => {
-    res.render("register")
+    res.render("users/register")
 });
 
 //Handling User registration
@@ -45,7 +45,7 @@ router.post('/register', catchAsync(async (req, res, next) => {
 
 // LOGIN ROUTES
 router.get("/login", (req, res) => {
-    res.render("login");
+    res.render("users/login");
 })
 //Handling login using a middleware
 router.post('/login', passport.authenticate('local', {
