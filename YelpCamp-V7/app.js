@@ -1,5 +1,4 @@
-const seedDB                = require("./seeds"),
-      express               = require("express"),
+const express               = require("express"),
       app                   = express(),
       bodyParser            = require("body-parser"),
       mongoose              = require("mongoose"),
@@ -12,6 +11,7 @@ const seedDB                = require("./seeds"),
       catchAsync            = require('./utils/catchAsync'),
       ExpressError          = require('./utils/ExpressError'),
       session               = require('express-session'),
+      seedDB                = require("./seeds"),
       ExpressError          = require('./utils/ExpressError');
 
       
