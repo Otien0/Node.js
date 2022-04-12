@@ -134,6 +134,8 @@ Links :
 		npm install dotenv --save   //To load enviroment variables from a .env file into process.env
 		npm install cloudinary
 		npm install multer-storage-cloudinary  //A multer storage engine for Cloudinary.
+
+		https://cloudinary.com/documentation/image_transformations
  
 
 
