@@ -1,9 +1,14 @@
-<%- include('../partials/header') -%>
+<% layout('layouts/boilerplate')%>
 
 <link rel="stylesheet" href="/public/stylesheets/stars.css">
 <div class="row">
-    <div class="col-6">
+    <div class="col-md-3" id="map">
+        <h4>View Map</h4>
+    </div>
 
+    <hr>
+
+    <div class="col-md-6">
         <div id="campgroundCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <% campground.images.forEach((img, i) => {  %>
@@ -51,7 +56,9 @@
         </div>
 
     </div>
-    <div class="col-6">
+    <hr>
+
+    <div class="col-md-3">
         <% if(currentUser){ %>
             <h2>Leave a Review</h2>
             <form action="/campgrounds/<%=campground._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
@@ -102,4 +109,10 @@
     </div>
 </div>
 
-<%- include('../partials/footer') -%>
+<script>
+    const mapToken = 'pk.eyJ1IjoibW9yeXNvIiwiYSI6ImNsMXdhbmxsMjI3cWozZGxtY2NvMDd4cHoifQ.cE20aBSSJiURhhxblRP0pQ';
+    // const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const campground = <%- JSON.stringify(campground) %>
+</script>
+
+<script src="/public/javascripts/showPageMap.js"></script>
