@@ -120,7 +120,7 @@ Links :
 
 	==>> "router.route(path)" - Which returns an instance of a single route which you can then use to handle HTTP verbs with optional middleware. 
 					    Use router.route() to avoid duplicate route naming and thus typing errors.
-
+	Implement star ratings using a library called Starability. 
 	Display a "STAR" Ratings on the review route. using this links:
 											https://github.com/LunarLogic/starability
 
@@ -136,13 +136,19 @@ Links :
 		npm install multer-storage-cloudinary  //A multer storage engine for Cloudinary.
 
 		https://cloudinary.com/documentation/image_transformations
+
+20. Adding Maps:
+	Display a map on the show page.
+	Implement geocoding and display a map on each campground page using MapBox. 
+		https://www.mapbox.com/
+	
  
 
 
 		
 
 
-20. DEPLOYMENT::
+21. DEPLOYMENT::
     a) Heroku:
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
