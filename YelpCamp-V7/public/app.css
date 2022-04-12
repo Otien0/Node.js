@@ -47,7 +47,11 @@ ul .nav-link {
 	margin: 2%, 1%, 1%, 2%;
 	padding: auto;
 }
-
+#map {
+	width: 100%; 
+	height: 300px;
+	margin: 2%, 1%, 1%, 2%;
+}
 .text-center{
 	margin-bottom: 10%;
 }
