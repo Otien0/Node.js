@@ -40,6 +40,11 @@ mongoose.connect("mongodb://localhost/yelp_camp", {
     useUnifiedTopology: true,
     useFindAndModify: false
 });
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+    console.log("Database connected");
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
