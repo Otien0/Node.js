@@ -1,6 +1,7 @@
 const express    = require("express"),
       router     = express.Router(),
       passport   = require("passport"),
+      catchAsync = require('../utils/catchAsync'),
       User       = require("../models/user");
 
 router.get("/", (req, res) => {
