@@ -84,7 +84,7 @@ Links :
 		npm install express-session --save
 		npm install method-override --save
 		npm install connect-flash --save
-		npm install ejs-mate --save
+		npm install ejs-mate --save   || https://github.com/JacksonTian/ejs-mate
 		npm install joi --save
 	
 	Links:
@@ -142,6 +142,13 @@ Links :
 	Implement geocoding and display a map on each campground page using MapBox. 
 		https://www.mapbox.com/
 	
+	Geocoding the user input locations using :  https://docs.mapbox.com/api/search/geocoding/
+								
+	Here, we are using ; A Node-JS SDK for working with Mapbox APIs. => https://github.com/mapbox/mapbox-sdk-js
+				https://github.com/mapbox/mapbox-sdk-js/blob/main/docs/services.md
+		npm install @mapbox/mapbox-sdk
+	
+	To display map on show page, we use: https://docs.mapbox.com/mapbox-gl-js/api/  || https://docs.mapbox.com/mapbox-gl-js/guides/install/
  
 
 
