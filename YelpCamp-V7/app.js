@@ -2,6 +2,7 @@ const express               = require("express"),
       app                   = express(),
       bodyParser            = require("body-parser"),
       mongoose              = require("mongoose"),
+      ejsMate               = require('ejs-mate'),
       User                  = require('./models/user'),
       flash                 = require("connect-flash"),
       path                  = require("path"),
@@ -41,9 +42,11 @@ db.once("open", () => {
 });
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.engine('ejs', ejsMate)
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(session(sessionConfig));
 app.use(flash());
