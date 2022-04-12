@@ -124,6 +124,7 @@ Links :
 	Display a "STAR" Ratings on the review route. using this links:
 											https://github.com/LunarLogic/starability
 
+19. Adding Images:
 	
 
 
