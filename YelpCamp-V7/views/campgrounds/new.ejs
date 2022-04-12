@@ -5,7 +5,7 @@
     <h1 style="text-align: center;">Create a New Campground</h1>
     <!-- <div style="width: 30%; margin: 25px auto;"> -->
     <div class="col-6 offset-3">
-        <form action="/campgrounds" method="POST" novalidate class="validated-form">
+        <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label" for="title">Title</label>
                 <input class="form-control" type="text" id="title" name="campground[title]" required>
@@ -20,13 +20,14 @@
                     Looks good!
                 </div>
             </div>
-            <div class="mb-3">
+
+            <!-- <div class="mb-3">
                 <label class="form-label" for="image">Image Url</label>
                 <input class="form-control" type="text" id="image" name="campground[image]" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
-            </div>
+            </div> -->
             <div class="mb-3">
                 <label class="form-label" for="price">Campground Price</label>
                 <div class="input-group">
@@ -47,15 +48,30 @@
                     Looks good!
                 </div>
             </div>
+            <div class="mb-3">
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                        <span class="form-file-button">Browse</span>
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Campground</button>
+            </div>
+        </form>
+        <a href="/campgrounds">All Campgrounds</a>
+    </div>
             <!-- <button class="btn btn-lg btn-default btn-block">Submit!</button> -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <div class="buttonHolder">
                     <input type="submit" value="Submit" class="btn btn-large btn-primary btn-block" id="Submit" />
                 </div>
             </div>
         </form>
-        <a href="/campgrounds" id="back">Go Back</a>
-    </div>
+        <a href="/campgrounds" id="back">Go Back</a> -->
+    <!-- </div> -->
     <!-- </div> -->
 </div>
 
