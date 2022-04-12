@@ -20,7 +20,7 @@ const seedDB                = require("./seeds"),
       
 const commentRoutes         = require("./routes/comments"),
       campgroundRoutes      = require("./routes/campgrounds"),
-      indexRoutes           = require("./routes/index"),
+      userRoutes           = require("./routes/users"),
       reviewRoutes         = require('./routes/reviews');
 
 const sessionConfig = {
@@ -70,7 +70,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use("/", indexRoutes);
+app.use("/", userRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use('/campgrounds/:id/reviews', reviewRoutes)
