@@ -3,8 +3,6 @@ const seedDB                = require("./seeds"),
       app                   = express(),
       bodyParser            = require("body-parser"),
       mongoose              = require("mongoose"),
-      Campground            = require("./models/campground"),
-      Comment               = require("./models/comment");
       User                  = require('./models/user'),
       flash                 = require("connect-flash"),
       path                  = require("path"),
@@ -13,7 +11,6 @@ const seedDB                = require("./seeds"),
       passportLocalMongoose = require("passport-local-mongoose"),
       catchAsync            = require('./utils/catchAsync'),
       ExpressError          = require('./utils/ExpressError'),
-      Review                = require("./models/review"),
       session               = require('express-session'),
       ExpressError          = require('./utils/ExpressError');
 
