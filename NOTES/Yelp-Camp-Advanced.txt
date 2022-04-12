@@ -128,6 +128,13 @@ Links :
 	Here, we are using Cloudinary image upload API:
 								https://cloudinary.com/
 	
+	Using Multer - a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
+		https://github.com/expressjs/multer
+		npm i multer --save
+		npm install dotenv --save   //To load enviroment variables from a .env file into process.env
+		npm install cloudinary
+		npm install multer-storage-cloudinary  //A multer storage engine for Cloudinary.
+ 
 
 
 		
