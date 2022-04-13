@@ -1,4 +1,48 @@
 DEPLOYMENT::
+
+First, create your cluster on mongoDB Atlas  ==>> https://www.mongodb.com/cloud ,
+	 again create database access user with password,
+	 white-list your ip-address to access your cluster,
+	 connect to your cluster using the options provided, || use; 'connect your application',
+	 copy the connection string and save it to a file, (".env"), with your password on it.
+
+	 Configure your session using mongo. use package; 'connect-mongo'
+		https://www.npmjs.com/package/connect-mongo
+			npm i connect-mongo --save
+
+	i.e:
+		const dbUrl                 = "mongodb://localhost/yelp_camp";
+		const MongoStore            = require('connect-mongo');
+		
+		const secret = 'thisshouldbeabettersecret!';
+
+		const store = new MongoStore({
+    			mongoUrl: dbUrl,
+    			secret,
+    			touchAfter: 24 * 3600
+		});
+
+		store.on("error", (e) => {
+    			console.log("SESSION STORE ERROR", e)
+		})
+
+		const sessionConfig = {
+    			store,
+    			name: 'session',
+    			secret: 'thisshouldbeabettersecret!',
+    			resave: false,
+    			saveUninitialized: true,
+    			cookie: {
+       			 httpOnly: true,
+       			 // secure: true,
+        			expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        			maxAge: 1000 * 60 * 60 * 24 * 7
+	    			}
+		}
+	
+	 	app.use(session(sessionConfig));
+
+
     a) Heroku:
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
@@ -33,7 +77,7 @@ DEPLOYMENT::
 						}
 
 
-          	heroku create "APP_NAME" -b https://github.com/mars/create-node-app-buildpack.git
+          	heroku create "APP_NAME"
 
         	git add .
 
