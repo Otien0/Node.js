@@ -152,12 +152,13 @@ Links :
 
 	Adding clustors to our maps =>> https://docs.mapbox.com/mapbox-gl-js/example/cluster/
  
-
+21. Further Styling::
+		https://imgix.com/?utm_source=images.unsplash.com&utm_medium=referral&utm_campaign=source-config-details
 
 		
 
 
-21. DEPLOYMENT::
+22. DEPLOYMENT::
     a) Heroku:
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
