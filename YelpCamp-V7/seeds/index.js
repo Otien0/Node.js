@@ -20,29 +20,29 @@ const sample = array => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for (let i = 0; i < 50; i++) {
-        const random1000 = Math.floor(Math.random() * 1000);
-        const price = Math.floor(Math.random() * 20) + 10;
+    for (let i = 0; i < 25; i++) {
+        const random25 = Math.floor(Math.random() * 25);
+        const price = Math.floor(Math.random() * 10) + 10;
         const camp = new Campground({
-            author: '623be4ff42b0af2f006c3118',
-            location: `${cities[random1000].city}, ${cities[random1000].state}`,
+            author: '6256dde10fc21b06d6749e61',
+            location: `${cities[random25].city}, ${cities[random25].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            description: 'Campi ya Kanzi was born in 1975 when Luca first set foot in the Chyulu. It was a childhood dream for 20 years, and become a reality in 1995 when Luca & Antonella moved to the Chyulu permanently. It took a few years to build, during which time we lived in a small tent for more than 24 months… The toilet was a pit in the bush and the shower a bucket on a tree, with stars as the canopy… Luca misses it, Antonella still damages his credit card in retaliation!',
+            description: 'This camping site in Kenya even offers you a sundowner experience as you watch the sunset with other travellers as well as a bonfire. If you would like to enjoy a relaxing weekend without having to travel too far away from town, then a Wilderbeast camp is the best place to camp.The garden at the camp is very relaxing.',
             price,
             geometry: {
                 type: "Point",
                 coordinates: [
-                    cities[random1000].longitude,
-                    cities[random1000].latitude,
+                    cities[random25].longitude,
+                    cities[random25].latitude,
                 ]
             },
             images: [
                 {
-                    url: 'https://res.cloudinary.com/self-hosted/image/upload/v1649773314/YelpCamp/vaqjuohnqebigakdgki3.jpg',
+                    url: 'https://res.cloudinary.com/self-hosted/image/upload/v1649860187/YelpCamp/zjw3ztkgjai2fgbuen43.jpg',
                     filename: 'YelpCamp/vaqjuohnqebigakdgki3'
                 },
                 {
-                    url: 'https://res.cloudinary.com/self-hosted/image/upload/v1649773315/YelpCamp/stpgwysdsuxeipf7j8qu.jpg',
+                    url: 'https://res.cloudinary.com/self-hosted/image/upload/v1649860187/YelpCamp/qezp8qztz1uuhveqgmy5.jpg',
                     filename: 'YelpCamp/stpgwysdsuxeipf7j8qu'
                 }
             ]
