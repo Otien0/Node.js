@@ -2,7 +2,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibW9yeXNvIiwiYSI6ImNsMXdhbmxsMjI3cWozZGxtY2NvM
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [39, 1],
+    center: [38, 1.5],
     zoom: 6
 });
 
@@ -35,19 +35,19 @@ map.on('load', () => {
                 'step',
                 ['get', 'point_count'],
                 '#00BCD4',
-                10,
+                2,
                 '#2196F3',
-                30,
+                6,
                 '#3F51B5'
             ],
             'circle-radius': [
                 'step',
                 ['get', 'point_count'],
-                15,
+                3,
+                8,
                 10,
-                20,
-                30,
-                25
+                15,
+                4
             ]
         }
     });
