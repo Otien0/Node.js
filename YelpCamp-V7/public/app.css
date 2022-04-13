@@ -7,64 +7,30 @@ body {
 	height: 100vh;
 } */
 
-/* .navbar-dark {
-	background-color: rgb(29, 19, 141);
-	color: white;
+#cluster-map {
+    width: 100%;
+    height: 400px;
 	margin-bottom: 5%;
-	position: fixed;
-	/* height: 2.5rem; */
-	/* padding-bottom: 1%; */
-/* } */
-/* .sticky {
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-}
-ul .nav-link {
-	color: white; */
-/* } */
 
-/* #verticle-line {
-	width: 0px;
-	height: 100%;
-	background: gray;
-} */
+}
 
-.landing {
-	margin-top: 3%;
+#map {
+    width: 100%;
+    height: 300px;
+	margin-bottom: 5%;
 }
-.img-landing {
-	display: block;
-}
-.view {
+
+/* .view {
 	display: block;
 	margin-top: 2%;
 	margin-bottom: 3%;
 	font: 1.5rem bold;
 	text-decoration: none;
-}
-.row {
-	margin: 2%, 1%, 1%, 2%;
-	padding: auto;
-}
-#map {
-	width: 25%; 
-	height: 200px;
-	margin: 2%, 1%, 1%, 2%;
-}
-.text-center{
-	margin-bottom: 10%;
-}
-
+} */
 
 .flash {
 	width: 50%;
 	place-items: center;
-}
-
-.img {
-	width: 250px;
-	height: 200px;
 }
 
 .auth {
@@ -73,50 +39,3 @@ ul .nav-link {
 .user {
 	color: blue;
 }
-
-.form-control, #Submit, #back {
-	margin: 5%;
-}
-
-/* Thumbnail styles */
-.thumbnail img {
-    width: 100%;
-}
-
-.thumbnail {
-    padding: 0;
-}
-
-.thumbnail .caption-full {
-    padding: 9px;
-}
-
-/* Google Map styles */
-#map {
-	height: 400px;
-	width: 100%;
-}
-
-/* Campground show page delete button */
-.delete-form {
-	display: inline-block;
-	margin-left: 1rem;
-}
-
-/* Flexbox grid fix */
-.flex-wrap {
-  display:flex;
-  flex-wrap: wrap;
-}
-
-
-/* .footer {
-	padding-top: 1%;
-	margin-top: 5%;
-	clear: both;
-	height: 2.5rem;
-	width: 100%;
-	background-color: rgb(29, 19, 141);
-	color: white;
-	text-align: center;
-} */
