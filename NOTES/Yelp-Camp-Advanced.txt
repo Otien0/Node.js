@@ -167,5 +167,14 @@ Links :
 
 
 
+
+
+
+Kenyan Cmping Links::::
+https://urbankenyans.com/camping-sites-in-kenya/
+https://www.getaway.co.za/travel-ideas/places-to-stay/campsites-in-kenya-camping/
+https://www.heleninwonderlust.co.uk/the-best-hostels-guesthouses-campsites-in-kenya/
+https://www.booking.com/searchresults.en-gb.html?aid=356980;label=gog235jc-1BCAIY_AModkICa2VIM1gDaHaIAQGYAQm4ARfIAQzYAQHoAQGIAgGoAgO4Av302ZIGwAIB0gIkZmIzMzNmNmItZWExMi00Mjg3LTkyOTYtYjU5NTdlM2Y3ODIy2AIF4AIB;sid=138c02d8ab8f719da7a0a78615376a0b;dest_id=109;dest_type=country;nflt=sth%3D21&
+
 echo "" >.gitignore
 		
