@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
 const express               = require("express"),
       app                   = express(),
       bodyParser            = require("body-parser"),
@@ -12,26 +16,45 @@ const express               = require("express"),
       catchAsync            = require('./utils/catchAsync'),
       ExpressError          = require('./utils/ExpressError'),
       session               = require('express-session'),
-      seedDB                = require("./seeds");
+      seedDB                = require("./seeds"),
+      mongoSanitize         = require('express-mongo-sanitize'),
+      helmet                = require('helmet');
 
-      
+// const dbUrl                 = process.env.DB_URL;
+const dbUrl                 = process.env.DB_URL || "mongodb://localhost/yelp_camp";
+const MongoStore            = require('connect-mongo');
 const campgroundRoutes      = require("./routes/campgrounds"),
       userRoutes            = require("./routes/users"),
       reviewRoutes          = require('./routes/reviews');
 
+const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
+
+const store = new MongoStore({
+    mongoUrl: dbUrl,
+    secret,
+    touchAfter: 24 * 3600
+});
+
+store.on("error", (e) => {
+    console.log("SESSION STORE ERROR", e)
+})
+
 const sessionConfig = {
-    secret: 'thisshouldbeabettersecret!',
+    store,
+    name: 'session',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
-        httpOnly: true, //For secured cookies
+        httpOnly: true,
+        // secure: true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }
 
-
-mongoose.connect("mongodb://localhost/yelp_camp", {
+// "mongodb://localhost/yelp_camp"
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -50,7 +73,63 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(session(sessionConfig));
 app.use(flash());
+app.use(mongoSanitize({
+    replaceWith: '_'
+}))
+// app.use(helmet());
 // seedDB();
+
+// const scriptSrcUrls = [
+//     "https://stackpath.bootstrapcdn.com/",
+//     "https://maxcdn.bootstrapcdn.com/bootstrap/",
+//     "https://www.bootstrapcdn.com/",
+//     "https://getbootstrap.com/",
+//     "https://api.tiles.mapbox.com/",
+//     "https://api.mapbox.com/",
+//     "https://kit.fontawesome.com/",
+//     "https://cdnjs.cloudflare.com/",
+//     "https://cdn.jsdelivr.net/",
+//     "https://www.jsdelivr.com/"
+// ];
+// const styleSrcUrls = [
+//     "https://kit-free.fontawesome.com/",
+//     "https://stackpath.bootstrapcdn.com/",
+//     "https://maxcdn.bootstrapcdn.com/bootstrap/",
+//     "https://www.bootstrapcdn.com/",
+//     "https://getbootstrap.com/",
+//     "https://api.mapbox.com/",
+//     "https://api.tiles.mapbox.com/",
+//     "https://fonts.googleapis.com/",
+//     "https://use.fontawesome.com/",
+// ];
+// const connectSrcUrls = [
+//     "https://api.mapbox.com/",
+//     "https://a.tiles.mapbox.com/",
+//     "https://b.tiles.mapbox.com/",
+//     "https://events.mapbox.com/",
+// ];
+// const fontSrcUrls = [];
+// app.use(
+//     helmet.contentSecurityPolicy({
+//         directives: {
+//             defaultSrc: ["'self'"],
+//             connectSrc: ["'self'", ...connectSrcUrls],
+//             scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
+//             styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+//             workerSrc: ["'self'", "blob:"],
+//             objectSrc: [],
+//             imgSrc: [
+//                 "'self'",
+//                 "blob:",
+//                 "data:",
+//                 "https://res.cloudinary.com/morys02/",
+//                 "https://images.unsplash.com/",
+//                 "https://www.google.com/search?q=campgrounds+kenya&tbm=isch&ved=2ahUKEwj0uMH_x5H3AhXF4YUKHR8ODIUQ2-cCegQIABAA&oq=campgrounds+kenya&gs_lcp=CgNpbWcQAzIHCCMQ7wMQJ1AAWABg6ai8BmgIcAB4AIABoQSIAYoGkgEHMi0xLjUtMZgBAKoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=IwhXYrSbIcXDlwSfnLCoCA&bih=569&biw=1280/"
+//             ],
+//             fontSrc: ["'self'", ...fontSrcUrls],
+//         },
+//     })
+// );
 
 // Passport Configurations
 app.use(require("express-session")({
@@ -92,11 +171,11 @@ app.use((err, req, res, next) => {
 })
 
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`YelpCamp server running on port ${PORT}`);
-  });
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//     console.log(`YelpCamp server running on port ${PORT}`);
+//   });
 
-// app.listen(3000, (req, res) => {
-//     console.log("YelpCamp server running on port 3000")
-// })
+app.listen(3000, () => {
+    console.log("YelpCamp server running on port 3000")
+})
