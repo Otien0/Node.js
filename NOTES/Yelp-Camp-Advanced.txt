@@ -149,6 +149,8 @@ Links :
 		npm install @mapbox/mapbox-sdk
 	
 	To display map on show page, we use: https://docs.mapbox.com/mapbox-gl-js/api/  || https://docs.mapbox.com/mapbox-gl-js/guides/install/
+
+	Adding clustors to our maps =>> https://docs.mapbox.com/mapbox-gl-js/example/cluster/
  
 
 
