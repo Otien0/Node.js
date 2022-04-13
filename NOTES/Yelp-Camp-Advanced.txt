@@ -155,10 +155,52 @@ Links :
 21. Further Styling::
 		https://imgix.com/?utm_source=images.unsplash.com&utm_medium=referral&utm_campaign=source-config-details
 
+22. Security Issues::
+	a) Mongo(No-SQL) Injection:
+		https://brightsec.com/blog/sql-injection-in-mongodb-examples-and-prevention/
+		https://nullsweep.com/a-nosql-injection-primer-with-mongo/
+		https://betterprogramming.pub/little-bobby-collections-how-to-write-a-mongodb-injection-ad58a4e2d754
+		https://book.hacktricks.xyz/pentesting-web/nosql-injection
+		https://www.zuar.com/blog/nosql-sql-injection-attacks-in-mongodb/
+
+	=> Using express-mongo-sanitize package
+		https://www.npmjs.com/package/express-mongo-sanitize
+			npm i express-mongo-sanitize --save
+
+	b) Cross-Site Scripting in Node.js:
+		https://auth0.com/blog/cross-site-scripting-xss/
+		https://www.stackhawk.com/blog/nodejs-xss-guide-examples-and-prevention/
+		https://www.section.io/engineering-education/how-to-prevent-cross-site-scripting-in-node-js/
+
+		
+	=> Sanitizing HTML inputs within the JOI-Schema Validator.
+	   This is done with the aid of "sanitize-html" npm package
+		https://www.npmjs.com/package/sanitize-html
+			npm i sanitize-html --save
+
+	c) Using Helmet.js package to secure HTTP headers returned by Express apps.
+		https://helmetjs.github.io/
+			npm install helmet --save
+		
+		https://www.securecoding.com/blog/using-helmetjs/
+		https://www.geeksforgeeks.org/node-js-securing-apps-with-helmet-js/
+		https://www.veracode.com/blog/secure-development/fasten-your-helmetjs-part-1-securing-your-express-http-headers
+
+	d) More On Security:
+		https://www.simform.com/blog/nodejs-security/
+		https://www.mindinventory.com/blog/nodejs-security-best-practices/
+		https://keenethics.com/blog/nodejs-security
+		https://www.vaadata.com/blog/node-js-common-vulnerabilities-security-best-practices/
+		https://technostacks.com/blog/nodejs-security-practices
+		https://blog.sqreen.com/nodejs-security-best-practices/
+		https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html
+		https://securityboulevard.com/2022/02/node-js-vulnerability-cheatsheet/
+ 
+
 		
 
 
-22. DEPLOYMENT::
+23. DEPLOYMENT::
     a) Heroku:
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
