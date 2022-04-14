@@ -1,6 +1,6 @@
 DEPLOYMENT::
 
-First, create your cluster on mongoDB Atlas  ==>> https://www.mongodb.com/cloud ,
+a)     First, create your cluster on mongoDB Atlas  ==>> https://www.mongodb.com/cloud ,
 	 again create database access user with password,
 	 white-list your ip-address to access your cluster,
 	 connect to your cluster using the options provided, || use; 'connect your application',
@@ -43,7 +43,7 @@ First, create your cluster on mongoDB Atlas  ==>> https://www.mongodb.com/cloud 
 	 	app.use(session(sessionConfig));
 
 
-    a) Heroku:
+    b) Heroku:
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
 		https://javascript.plainenglish.io/hosting-node-js-app-on-heroku-in-less-than-5-mins-bc7ce244c8d0
@@ -92,7 +92,8 @@ First, create your cluster on mongoDB Atlas  ==>> https://www.mongodb.com/cloud 
 
 	7) That's it, CONGRATULATIONS, your NodeJs App is now LIVE!!!
 
-	8) Connect to Database using Mongolab:
+c) configure the package.json and add on scripts{...};
+			"start": "node app.js"
 		
 
 
