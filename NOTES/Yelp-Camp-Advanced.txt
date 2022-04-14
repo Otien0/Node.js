@@ -185,6 +185,7 @@ Links :
 		https://www.securecoding.com/blog/using-helmetjs/
 		https://www.geeksforgeeks.org/node-js-securing-apps-with-helmet-js/
 		https://www.veracode.com/blog/secure-development/fasten-your-helmetjs-part-1-securing-your-express-http-headers
+		https://www.veracode.com/blog/secure-development/fasten-your-helmetjs-part-2-locking-down-your-content-security-policy
 
 	d) More On Security:
 		https://www.simform.com/blog/nodejs-security/
