@@ -62,7 +62,7 @@ a)     First, create your cluster on mongoDB Atlas  ==>> https://www.mongodb.com
 	5) Run heroku login from your project directory through terminal or command prompt and fill in your Heroku credentials.
 		The terminal may also direct you to heroku site to login, confirming your account.
 
-	6) Ensure you are into the right directory of your App, then type;
+	6) Ensure you are into the right directory of your App, initialize an empty git repo by;
 
            	git init
 
@@ -92,12 +92,21 @@ a)     First, create your cluster on mongoDB Atlas  ==>> https://www.mongodb.com
 
 	7) That's it, CONGRATULATIONS, your NodeJs App is now LIVE!!!
 
-c) configure the package.json and add on scripts{...};
+c) POST INITIAL DEPLOYMENT CONFIGURATIONS:
+		configure the package.json and add on scripts{...};
 			"start": "node app.js"
 		
+		Again, change your port to:
+			const PORT = process.env.PORT || 3000;
+			app.listen(PORT, () => {
+    				console.log(`YelpCamp server running on port ${PORT}`);
+			});
 
+		Configure Heroku environment variables:
+		=> If you have added some secrets like email, password, MongoDB Atlas URI, etc, then in the code, you shouldn’t directly paste it.
+		   Instead, put the following in the code and set its value in the Heroku “config vars” on the 'settings' section of your app.
 
-
+		Go to : https://randomkeygen.com/    | | to generate random key for your app's SECRET
 
 MERN :::
 	https://coursework.vschool.io/deploying-mern-app-to-heroku/
