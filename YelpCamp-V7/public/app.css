@@ -39,3 +39,11 @@ body {
 .user {
 	color: blue;
 }
+
+.footer {
+	align-items: center;
+	text-align: center;
+	place-items: center;
+	padding-top: 3%;
+	margin-top: 5%;
+}
