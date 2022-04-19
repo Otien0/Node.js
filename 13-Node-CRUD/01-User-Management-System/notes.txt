@@ -1,0 +1,2 @@
+Packages :
+		npm install express mongoose morgan ejs dotenv body-parser axios --save
