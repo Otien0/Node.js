@@ -4,4 +4,4 @@ Clonned from this github link:
 
 NEXT_PUBLIC_REALM_APP_ID = products-hxhrd
 
-MONGODB_URI= mongodb://myUserAdmin:X8Q18Q0UNb84eXZP@datalake0-vlsqb.a.query.mongodb.net/myFirstDatabase?ssl=true&authSource=admin
+MONGODB_URI= mongodb://myUserAdmin:password@datalake0-vlsqb.a.query.mongodb.net/myFirstDatabase?ssl=true&authSource=admin
