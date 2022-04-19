@@ -1,0 +1,24 @@
+{
+  "name": "01-user-management-system",
+  "version": "1.0.0",
+  "description": "Node.js CRUD App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Node.js"
+  },
+  "author": "mourice-oduor",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0",
+    "morgan": "^1.10.0"
+  }
+}
