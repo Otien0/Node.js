@@ -134,7 +134,7 @@ Links :
 		npm install dotenv --save   //To load enviroment variables from a .env file into process.env
 		npm install cloudinary
 		npm install multer-storage-cloudinary  //A multer storage engine for Cloudinary.
-
+		
 		https://cloudinary.com/documentation/image_transformations
 
 20. Adding Maps:
@@ -202,6 +202,10 @@ Links :
 
 
 23. DEPLOYMENT::
+
+		DEPLOYED LIVE SITE: 
+					https://campgrounds-ke.herokuapp.com/ 
+
     a) Heroku:
 		https://devcenter.heroku.com/articles/deploying-nodejs
 		https://www.positronx.io/deploy-simple-node-js-app-on-heroku-in-minutes/
@@ -214,7 +218,7 @@ Links :
 
 
 
-Kenyan Cmping Links::::
+Kenyan Camping Links::::
 https://urbankenyans.com/camping-sites-in-kenya/
 https://www.getaway.co.za/travel-ideas/places-to-stay/campsites-in-kenya-camping/
 https://www.heleninwonderlust.co.uk/the-best-hostels-guesthouses-campsites-in-kenya/
